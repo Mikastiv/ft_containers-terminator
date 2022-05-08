@@ -1,0 +1,7 @@
+-Wall
+-Wextra
+-Werror
+-Wpedantic
+-Wsign-conversion
+-I.
+-std=c++98
