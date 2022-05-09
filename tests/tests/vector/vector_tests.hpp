@@ -6,10 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:02:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 16:57:29 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/09 17:53:43 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 void vec_check_typedefs();
+void vec_check_types();

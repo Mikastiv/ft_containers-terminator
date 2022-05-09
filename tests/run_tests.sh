@@ -51,7 +51,7 @@ test_container() {
         LOG_FT="$LOGS/$1/$TEST_NAME"_ft.log
         LOG_STD="$LOGS/$1/$TEST_NAME"_std.log
 
-        if $CXX $CXXFLAGS -DNAMESPACE=ft $test; then
+        if $CXX $CXXFLAGS -DNAMESPACE=ft $test track/memory_tracker.cpp track/leak_checker.cpp; then
             ./a.out > $LOG_FT
         else
             print_err "Error compiling $test"
@@ -59,7 +59,7 @@ test_container() {
             continue
         fi
 
-        $CXX $CXXFLAGS -DNAMESPACE=std $test
+        $CXX $CXXFLAGS -DNAMESPACE=std $test track/memory_tracker.cpp track/leak_checker.cpp
         ./a.out > $LOG_STD
 
         DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.txt
@@ -71,11 +71,11 @@ test_container() {
             print_err "Check $DIFF_FILE for $t diffs with std"
         else
             test_success "$1 $TEST_NAME"
-            rm $DIFF_FILE
+            rm -f $DIFF_FILE
         fi
     done
 
-    rm a.out
+    rm -f a.out
 }
 
 rm -rf $LOGS $DIFFS

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 16:44:58 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:39:35 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 #include "track/leak_checker.hpp"
 #include "track/track_allocator.hpp"
+#include <cstdlib>
+
+#define SEED 64
 
 #define PRINT_FILE_LINE()                                                                          \
     {                                                                                              \
@@ -61,6 +64,8 @@ void print_vector(Iter first, Iter last)
     {                                                                                              \
         if (!(vec.capacity() >= vec.size())) {                                                     \
             PRINT_MSG("Capacity is smaller than size");                                            \
+        } else {                                                                                   \
+            PRINT_MSG("Capacity Ok");                                                              \
         }                                                                                          \
     }
 
@@ -96,6 +101,62 @@ void iota(ForwardIt first, ForwardIt last, T value = T())
 #define MAIN(test_func)                                                                            \
     int main()                                                                                     \
     {                                                                                              \
+        srand(SEED);                                                                               \
         test_func();                                                                               \
+        leak_checker::check_all();                                                                 \
     }
 #endif
+
+struct true_type {
+    static const bool value = true;
+    typedef true_type type;
+};
+
+struct false_type {
+    static const bool value = false;
+    typedef false_type type;
+};
+
+template <typename T, typename U>
+struct is_same : public false_type {
+};
+
+template <typename T>
+struct is_same<T, T> : public true_type {
+};
+
+template <typename T>
+void init_array(T* arr, std::size_t size)
+{
+    iota(arr, arr + size, (T)rand());
+}
+
+#define SETUP_ARRAY(type, name, size)                                                              \
+    type name[size];                                                                               \
+    init_array(name, size);
+
+#define SETUP_ARRAYS()                                                                             \
+    SETUP_ARRAY(long, s_long, 32);                                                                 \
+    SETUP_ARRAY(long, b_long, 64);                                                                 \
+    std::size_t s_long_size = 32;                                                                  \
+    std::size_t b_long_size = 64;                                                                  \
+    SETUP_ARRAY(int, s_int, 32);                                                                   \
+    SETUP_ARRAY(int, b_int, 64);                                                                   \
+    std::size_t s_int_size = 32;                                                                   \
+    std::size_t b_int_size = 64;                                                                   \
+    SETUP_ARRAY(double, s_double, 32);                                                             \
+    SETUP_ARRAY(double, b_double, 64);                                                             \
+    std::size_t s_double_size = 32;                                                                \
+    std::size_t b_double_size = 64;                                                                \
+    SETUP_ARRAY(char, s_char, 32);                                                                 \
+    SETUP_ARRAY(char, b_char, 64);                                                                 \
+    std::size_t s_char_size = 32;                                                                  \
+    std::size_t b_char_size = 64;                                                                  \
+    (void)s_long_size;                                                                             \
+    (void)b_long_size;                                                                             \
+    (void)s_int_size;                                                                              \
+    (void)b_int_size;                                                                              \
+    (void)s_double_size;                                                                           \
+    (void)b_double_size;                                                                           \
+    (void)s_char_size;                                                                             \
+    (void)b_char_size;
