@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:11:48 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/09 19:17:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,9 @@ void print_vector(Iter first, Iter last)
 
 #define PRINT_VEC(vec)                                                                             \
     {                                                                                              \
+        std::cout << "\nVector content:\n";                                                        \
         print_vector(vec.begin(), vec.end());                                                      \
+        std::cout << std::endl;                                                                    \
     }
 
 #define PRINT_SIZE(vec)                                                                            \
