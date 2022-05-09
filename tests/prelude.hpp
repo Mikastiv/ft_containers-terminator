@@ -6,14 +6,14 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 20:44:44 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/08 21:11:25 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "track/track_allocator.hpp"
 #include "track/leak_checker.hpp"
+#include "track/track_allocator.hpp"
 
 #define PRINT_FILE_LINE()                                                                          \
     {                                                                                              \
@@ -46,16 +46,22 @@ void print_vector(Iter first, Iter last)
         print_vector(vec.begin(), vec.end());                                                      \
     }
 
-#define PRINT_SIZE_CAP(vec)                                                                        \
+#define PRINT_SIZE(vec)                                                                            \
     {                                                                                              \
         PRINT_LINE("Size:", vec.size());                                                           \
-        PRINT_LINE("Capacity:", vec.capacity());                                                   \
     }
 
 #define PRINT_ALL(vec)                                                                             \
     {                                                                                              \
-        PRINT_SIZE_CAP(vec);                                                                       \
+        PRINT_SIZE(vec);                                                                           \
         PRINT_VEC(vec);                                                                            \
+    }
+
+#define CHECK_CAPACITY(vec)                                                                        \
+    {                                                                                              \
+        if (!(vec.capacity() >= vec.size())) {                                                     \
+            PRINT_MSG("Capacity is smaller than size");                                            \
+        }                                                                                          \
     }
 
 #define CATCH_UNHANDLED_EX()                                                                       \
@@ -76,4 +82,14 @@ void iota(ForwardIt first, ForwardIt last, T value = T())
 
 #ifndef NAMESPACE
 #define NAMESPACE ft
+#endif
+
+#ifdef SINGLE_BINARY
+#define MAIN(test_func)
+#else
+#define MAIN(test_func)                                                                            \
+    int main()                                                                                     \
+    {                                                                                              \
+        test_func();                                                                               \
+    }
 #endif
