@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_tests.hpp                                   :+:      :+:    :+:   */
+/*   assign.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 21:02:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 18:52:30 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/09 18:47:35 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/09 19:12:24 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "vector.hpp"
+#include "vector_prelude.hpp"
 
-void vec_check_typedefs();
-void vec_check_types();
-void vec_test_assign_range();
-void vec_test_assign();
+void vec_test_assign()
+{
+    SETUP_ARRAYS();
+
+    {
+    }
+}
+
+MAIN(vec_test_assign)
