@@ -74,6 +74,8 @@ test_container() {
             rm $DIFF_FILE
         fi
     done
+
+    rm a.out
 }
 
 rm -rf $LOGS $DIFFS
@@ -85,6 +87,6 @@ if [ $# -ne 0 ]; then
 	CONTAINERS=$@;
 fi
 
-for container in $CONTAINERS; do
-    test_container $container 2>/dev/null
+for c in $CONTAINERS; do
+    test_container $c
 done

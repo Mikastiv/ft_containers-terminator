@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:09:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 20:17:32 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:43:22 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ void leak_checker::check_destructor_calls()
         std::cout << tracker.constructs_count() << " Alive object(s)\n";
         std::cout << "========================================" << std::endl;
     }
+}
+
+void leak_checker::check_all()
+{
+    check_leaks();
+    check_destructor_calls();
 }
 
 memory_tracker leak_checker::tracker = memory_tracker();

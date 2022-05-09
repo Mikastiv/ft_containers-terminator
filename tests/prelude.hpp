@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 21:11:25 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/09 16:44:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,12 @@ void print_vector(Iter first, Iter last)
         if (!(vec.capacity() >= vec.size())) {                                                     \
             PRINT_MSG("Capacity is smaller than size");                                            \
         }                                                                                          \
+    }
+
+#define CHECK_AND_PRINT_ALL(vec)                                                                   \
+    {                                                                                              \
+        CHECK_CAPACITY(vec);                                                                       \
+        PRINT_ALL(vec);                                                                            \
     }
 
 #define CATCH_UNHANDLED_EX()                                                                       \
