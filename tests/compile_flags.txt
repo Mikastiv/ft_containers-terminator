@@ -3,5 +3,6 @@
 -Werror
 -Wpedantic
 -Wsign-conversion
--I.
 -std=c++98
+-I.
+-I../../ft_containers
