@@ -6,10 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:00:14 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 21:00:53 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/08 23:10:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "prelude.hpp"
 #include "vector_prelude.hpp"
 
 #define CHECK_TYPEDEF(type)                                                                        \
@@ -40,3 +41,5 @@ void vec_check_typedefs()
         (void)c;
     }
 }
+
+MAIN(vec_check_typedefs)
