@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   leak_checker.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/08 18:23:40 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 20:17:48 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/08 20:08:24 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/08 20:09:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "track/leak_checker.hpp"
-#include "track/track_allocator.hpp"
+#pragma once
 
-int main()
+#include "memory_tracker.hpp"
+
+class leak_checker
 {
-    track_allocator<int> alloc;
+    public:
+        static void check_leaks();
+        static void check_destructor_calls();
 
-    int* ptr = alloc.allocate(20);
-    alloc.construct(ptr, 6);
-    alloc.destroy(ptr);
-    alloc.deallocate(ptr, 20);
-    leak_checker::check_leaks();
-    leak_checker::check_destructor_calls();
-}
+    private:
+        static memory_tracker tracker;
+};

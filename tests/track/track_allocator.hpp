@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/08 19:12:23 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/08 20:08:31 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,13 +51,13 @@ public:
     T* allocate(std::size_t n, const void* hint = 0)
     {
         T* block = std::allocator<T>().allocate(n, hint);
-        alloc_map.add_allocation((void*)block, n);
+        tracker.add_allocation((void*)block, n);
         return block;
     }
 
     void deallocate(T* p, std::size_t n)
     {
-        dealloc_result result = alloc_map.remove_allocation((void*)p, n);
+        dealloc_result result = tracker.remove_allocation((void*)p, n);
 
         switch (result) {
             case DEALLOC_BAD_POINTER:
@@ -65,7 +65,7 @@ public:
                 return;
             case DEALLOC_BAD_SIZE:
                 std::cout << "Called deallocate with wrong block size: " << n << " (expected "
-                          << alloc_map.block_size(p) << ")" << std::endl;
+                          << tracker.block_size(p) << ")" << std::endl;
             default:
                 std::allocator<T>().deallocate(p, n);
         }
@@ -78,7 +78,7 @@ public:
 
     void construct(pointer p, const_reference val)
     {
-        const bool result = alloc_map.add_constructor_call((void*)p);
+        const bool result = tracker.add_constructor_call((void*)p);
 
         if (!result) {
             std::cout << "Called construct on initilized memory: " << p << std::endl;
@@ -89,7 +89,7 @@ public:
 
     void destroy(pointer p)
     {
-        const bool result = alloc_map.add_destructor_call((void*)p);
+        const bool result = tracker.add_destructor_call((void*)p);
 
         if (!result) {
             std::cout << "Called destroy on uninitilized memory: " << p << std::endl;
@@ -99,5 +99,5 @@ public:
     }
 
 private:
-    memory_tracker alloc_map;
+    memory_tracker tracker;
 };

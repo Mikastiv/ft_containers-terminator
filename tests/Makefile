@@ -1,4 +1,4 @@
-SRC			= memory_tracker.cpp main.cpp
+SRC			= memory_tracker.cpp leak_checker.cpp main.cpp
 OBJ			= obj
 OBJS		= $(SRC:%=$(OBJ)/%.o)
 
@@ -7,7 +7,7 @@ CXX			= clang++
 
 NAME		= test
 
-VPATH		= core
+VPATH		= track
 
 all:	$(NAME)
 
