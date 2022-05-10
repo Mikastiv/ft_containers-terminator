@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 17:48:17 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:59:57 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 #define PRINT_FILE_LINE()                                                                          \
     {                                                                                              \
-        std::cout << " (file: " << __FILE__ << ", line: " << __LINE__ << ")\n";                    \
+        std::cout << " (file: " << __FILE__ << ", line: " << __LINE__ << ")" << std::endl;         \
     }
 
 #define PRINT_LINE(msg, value)                                                                     \
@@ -43,7 +43,7 @@ void print_vector(Iter first, Iter last)
     for (Iter it = first; it != last; ++it) {
         std::cout << *it << " ";
     }
-    std::cout << "\n";
+    std::cout << std::endl;
 }
 
 #define PRINT_VEC(vec)                                                                             \
