@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:47:35 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 14:03:18 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:44:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,23 @@ void vec_test_assign()
     {
         CHARVECTOR v;
 
-        v.assign(0, 1);
+        v.assign(0, 'c');
 
         CHECK_AND_PRINT_ALL(v);
 
-        v.assign(64, 10);
+        v.assign(64, 'A');
 
         CHECK_AND_PRINT_ALL(v);
 
-        v.assign(32, 64);
+        v.assign(32, '5');
 
         CHECK_AND_PRINT_ALL(v);
 
-        v.assign(49, 5);
+        v.assign(49, '8');
 
         CHECK_AND_PRINT_ALL(v);
 
-        v.assign(77, 99);
+        v.assign(77, '2');
 
         CHECK_AND_PRINT_ALL(v);
     }

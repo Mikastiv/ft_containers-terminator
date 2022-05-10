@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 13:55:32 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:41:47 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,10 @@ void init_array(T* arr, std::size_t size)
     SETUP_ARRAY(int, b_int, 64);                                                                   \
     SETUP_ARRAY(double, s_double, 32);                                                             \
     SETUP_ARRAY(double, b_double, 64);                                                             \
-    SETUP_ARRAY(char, s_char, 32);                                                                 \
-    SETUP_ARRAY(char, b_char, 64);                                                                 \
+    char s_char[32];                                                                               \
+    iota(s_char, s_char + 32, '@');                                                                \
+    char b_char[64];                                                                               \
+    iota(b_char, b_char + 64, '$');                                                                \
     std::size_t s_size = 32;                                                                       \
     std::size_t b_size = 64;                                                                       \
     (void)s_size;                                                                                  \
