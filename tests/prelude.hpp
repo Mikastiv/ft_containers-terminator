@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 17:41:47 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:48:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include "track/leak_checker.hpp"
 #include "track/track_allocator.hpp"
 #include <cstdlib>
+#include <sstream>
+#include <string>
 
 #define SEED 64
 
