@@ -53,12 +53,12 @@ test_container() {
 
         if $CXX $CXXFLAGS -DNAMESPACE=ft $test track/memory_tracker.cpp track/leak_checker.cpp; then
             if ! ./a.out > $LOG_FT; then
-                test_fail "$TEST_NAME"
+                test_fail "$1 $TEST_NAME"
                 continue
             fi
         else
             print_err "Error compiling $test"
-            test_fail "$TEST_NAME"
+            test_fail "$1 $TEST_NAME"
             continue
         fi
 
