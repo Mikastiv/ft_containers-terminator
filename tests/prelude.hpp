@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:17:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:55:32 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,3 +173,9 @@ void init_array(T* arr, std::size_t size)
     };                                                                                             \
     (void)s_string;                                                                                \
     (void)b_string;
+
+#define STRVECTOR NAMESPACE::vector<std::string, track_allocator<std::string> >
+#define INTVECTOR NAMESPACE::vector<int, track_allocator<int> >
+#define LONGVECTOR NAMESPACE::vector<long, track_allocator<long> >
+#define DOUBLEVECTOR NAMESPACE::vector<double, track_allocator<double> >
+#define CHARVECTOR NAMESPACE::vector<char, track_allocator<char> >

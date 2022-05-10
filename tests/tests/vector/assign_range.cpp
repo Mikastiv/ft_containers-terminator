@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:56:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:13:19 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 13:56:18 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_assign_range()
     SETUP_ARRAYS();
 
     {
-        NAMESPACE::vector<std::string, track_allocator<std::string> > v;
+        STRVECTOR v;
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -35,7 +35,7 @@ void vec_test_assign_range()
     }
 
     {
-        NAMESPACE::vector<long, track_allocator<long> > v;
+        LONGVECTOR v;
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -49,7 +49,7 @@ void vec_test_assign_range()
     }
 
     {
-        NAMESPACE::vector<int, track_allocator<int> > v(s_int, s_int + s_size);
+        INTVECTOR v(s_int, s_int + s_size);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -60,7 +60,7 @@ void vec_test_assign_range()
     }
 
     {
-        ft::vector<char, track_allocator<char> > v;
+        CHARVECTOR v;
 
         std::istringstream str("1 2 3 4 5 6 7");
         std::istreambuf_iterator<char> it(str), end;

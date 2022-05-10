@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignement.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 19:32:09 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:32:33 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/10 14:27:51 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/10 14:38:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "track/track_allocator.hpp"
+#include <vector>
 
-void vec_test_assignment()
+int main()
 {
-    SETUP_ARRAYS();
-}
+    srand(time(0));
+    std::vector<int, track_allocator<int> > v(64, rand());
 
-MAIN(vec_test_assignment)
+    v.clear();
+}
