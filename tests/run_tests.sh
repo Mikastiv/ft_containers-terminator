@@ -65,7 +65,7 @@ test_container() {
         $CXX $CXXFLAGS -DNAMESPACE=std $test track/memory_tracker.cpp track/leak_checker.cpp
         ./a.out > $LOG_STD
 
-        DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.txt
+        DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.diff
         diff -u $LOG_FT $LOG_STD > $DIFF_FILE
         RESULT=$(cat $DIFF_FILE)
 

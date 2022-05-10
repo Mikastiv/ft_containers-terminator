@@ -3,3 +3,4 @@ test
 a.out
 .vscode
 *.log
+*.diff
