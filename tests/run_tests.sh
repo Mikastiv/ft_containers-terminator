@@ -70,8 +70,8 @@ test_container() {
         RESULT=$(cat $DIFF_FILE)
 
         if [[ ${#RESULT} > 0 ]] ; then
-            test_fail "$1 $t"
-            print_err "Check $DIFF_FILE for $t diffs with std"
+            test_fail "$1 $TEST_NAME"
+            print_err "Check $DIFF_FILE for $TEST_NAME diffs with std"
         else
             test_success "$1 $TEST_NAME"
             rm -f $DIFF_FILE
@@ -92,10 +92,13 @@ test_files() {
         TEST_FILE="tests/$1/$TEST_NAME.cpp"
 
         if $CXX $CXXFLAGS -DNAMESPACE=ft $TEST_FILE track/memory_tracker.cpp track/leak_checker.cpp; then
-            ./a.out > $LOG_FT
+            if ! ./a.out > $LOG_FT; then
+                test_fail "$1 $TEST_NAME"
+                continue
+            fi
         else
             print_err "Error compiling $TEST_FILE"
-            test_fail "$TEST_NAME"
+            test_fail "$1 $TEST_NAME"
             continue
         fi
 
@@ -107,8 +110,8 @@ test_files() {
         RESULT=$(cat $DIFF_FILE)
 
         if [[ ${#RESULT} > 0 ]] ; then
-            test_fail "$1 $t"
-            print_err "Check $DIFF_FILE for $t diffs with std"
+            test_fail "$1 $TEST_NAME"
+            print_err "Check $DIFF_FILE for $TEST_NAME diffs with std"
         else
             test_success "$1 $TEST_NAME"
             rm -f $DIFF_FILE
