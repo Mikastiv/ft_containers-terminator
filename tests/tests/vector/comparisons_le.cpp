@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:32:56 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 15:53:27 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 17:35:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 void vec_test_comparisons_le()
 {
     {
-        LONGVECTOR v1;
-        LONGVECTOR v2;
+        NAMESPACE::vector<long> v1;
+        NAMESPACE::vector<long> v2;
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal");
@@ -25,8 +25,8 @@ void vec_test_comparisons_le()
     }
 
     {
-        LONGVECTOR v1(5);
-        LONGVECTOR v2;
+        NAMESPACE::vector<long> v1(5, 64);
+        NAMESPACE::vector<long> v2;
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal.");
@@ -34,8 +34,8 @@ void vec_test_comparisons_le()
     }
 
     {
-        LONGVECTOR v1;
-        LONGVECTOR v2(5);
+        NAMESPACE::vector<long> v1;
+        NAMESPACE::vector<long> v2(5, 32);
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal..");
@@ -43,8 +43,8 @@ void vec_test_comparisons_le()
     }
 
     {
-        LONGVECTOR v1(5);
-        LONGVECTOR v2(5);
+        NAMESPACE::vector<long> v1(5, 64);
+        NAMESPACE::vector<long> v2(5, 48);
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal...");
@@ -52,8 +52,17 @@ void vec_test_comparisons_le()
     }
 
     {
-        LONGVECTOR v1(5);
-        LONGVECTOR v2(4);
+        NAMESPACE::vector<long> v1(5, 64);
+        NAMESPACE::vector<long> v2(5, 64);
+
+        if (v1 <= v2) {
+            PRINT_MSG("Less than or equal...");
+        }
+    }
+
+    {
+        NAMESPACE::vector<long> v1(5, 64);
+        NAMESPACE::vector<long> v2(4, 64);
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal....");
@@ -61,8 +70,8 @@ void vec_test_comparisons_le()
     }
 
     {
-        LONGVECTOR v1(4);
-        LONGVECTOR v2(5);
+        NAMESPACE::vector<long> v1(4);
+        NAMESPACE::vector<long> v2(5);
 
         if (v1 <= v2) {
             PRINT_MSG("Less than or equal.....");

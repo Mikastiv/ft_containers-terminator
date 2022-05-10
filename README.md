@@ -4,6 +4,8 @@ A tester for the project ft_containers at 42
 
 ## Usage
 
+Set the location of your containers folder in tests/run_tests.sh (variable FT_CONTAINERS)
+
 Run every tests: <br/>
 ```sh run_tests.sh```
 
