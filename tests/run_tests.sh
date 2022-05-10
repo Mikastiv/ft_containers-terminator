@@ -78,15 +78,58 @@ test_container() {
     rm -f a.out
 }
 
-rm -rf $LOGS $DIFFS
-mkdir -p $LOGS $DIFFS
+test_files() {
+    TESTS=${@:2}
 
-CONTAINERS="vector map stack set"
+    for test in $TESTS; do
+        TEST_NAME=$test
+        LOG_FT="$LOGS/$1/$TEST_NAME"_ft.log
+        LOG_STD="$LOGS/$1/$TEST_NAME"_std.log
 
-if [ $# -ne 0 ]; then
-	CONTAINERS=$@;
-fi
+        TEST_FILE="tests/$1/$TEST_NAME.cpp"
 
-for c in $CONTAINERS; do
-    test_container $c
-done
+        if $CXX $CXXFLAGS -DNAMESPACE=ft $TEST_FILE track/memory_tracker.cpp track/leak_checker.cpp; then
+            ./a.out > $LOG_FT
+        else
+            print_err "Error compiling $TEST_FILE"
+            test_fail "$TEST_NAME"
+            continue
+        fi
+
+        $CXX $CXXFLAGS -DNAMESPACE=std $TEST_FILE track/memory_tracker.cpp track/leak_checker.cpp
+        ./a.out > $LOG_STD
+
+        DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.txt
+        diff -u $LOG_FT $LOG_STD > $DIFF_FILE
+        RESULT=$(cat $DIFF_FILE)
+
+        if [[ ${#RESULT} > 0 ]] ; then
+            test_fail "$1 $t"
+            print_err "Check $DIFF_FILE for $t diffs with std"
+        else
+            test_success "$1 $TEST_NAME"
+            rm -f $DIFF_FILE
+        fi
+    done
+
+    rm -f a.out
+}
+
+run_container_tests() {
+    rm -rf $LOGS $DIFFS
+    mkdir -p $LOGS $DIFFS
+
+    CONTAINERS="vector map stack set"
+
+    if [ $# -ne 0 ]; then
+        CONTAINERS=$@;
+    fi
+
+    for c in $CONTAINERS; do
+        test_container $c
+    done
+}
+
+run_test_files() {
+    test_files $1 ${@:2}
+}
