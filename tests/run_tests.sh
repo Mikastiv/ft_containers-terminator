@@ -43,12 +43,12 @@ do_test() {
     if $CXX $CXXFLAGS -DNAMESPACE=ft $3 track/memory_tracker.cpp track/leak_checker.cpp; then
         if ! ./a.out > $LOG_FT; then
             test_fail "$1 $2"
-            continue
+            return
         fi
     else
         print_err "Error compiling $3"
         test_fail "$1 $2"
-        continue
+        return
     fi
 
     $CXX $CXXFLAGS -DNAMESPACE=std $3 track/memory_tracker.cpp track/leak_checker.cpp

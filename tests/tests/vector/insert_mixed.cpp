@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:54 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:52:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:09:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,43 @@
 void vec_test_insert_mixed()
 {
     SETUP_ARRAYS();
+
+    {
+        INTVECTOR v;
+
+        v.insert(v.end(), s_int, s_int + s_size - 10);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin() + 5, 9, -1);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        INTVECTOR::iterator it = v.insert(v.begin(), 64);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        for (int i = 0; i < 23; ++i) {
+            it = v.insert(v.begin() + i + 2, i);
+            PRINT_LINE("It:", *it);
+            CHECK_AND_PRINT_ALL(v);
+        }
+
+        v.insert(v.end(), 12, 42);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin() + 12, b_int, b_int + b_size);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin(), 69);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
+    }
 }
 
 MAIN(vec_test_insert_mixed)
