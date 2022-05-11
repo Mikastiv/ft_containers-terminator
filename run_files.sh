@@ -1,3 +1,3 @@
 #!/bin/sh
 
-cd tests && source run_tests.sh && run_test_files $@
+source tests/run_tests.sh && cd tests && run_test_files $@

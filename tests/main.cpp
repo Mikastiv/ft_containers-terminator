@@ -6,16 +6,50 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:27:51 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 17:16:29 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 20:17:23 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "track/track_allocator.hpp"
+#include "../../ft_containers/vector.hpp"
+#include <memory>
 #include <vector>
+
+struct object
+{
+    int* ptr;
+
+    object()
+    {
+        ptr = new int[10]();
+    }
+
+    object(const object&)
+    {
+        ptr = new int[10]();
+    }
+
+    ~object()
+    {
+        delete[] ptr;
+    }
+};
 
 int main()
 {
-    std::vector<int, track_allocator<int> > v(64, 34);
+    std::allocator<object> alloc;
 
-    v.clear();
+    object* arr = alloc.allocate(10);
+    object o;
+
+    for (int i = 0; i < 10; ++i) {
+        alloc.construct(arr + i, o);
+    }
+    for (int i = 0; i < 10; ++i) {
+        alloc.construct(arr + i, o);
+    }
+    for (int i = 0; i < 10; ++i) {
+        alloc.destroy(arr + i);
+    }
+
+    alloc.deallocate(arr, 10);
 }
