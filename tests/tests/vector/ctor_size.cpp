@@ -6,15 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:38:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 16:52:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:46:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
-
-struct big_struct {
-    long data[2000];
-};
 
 void vec_test_ctor_size()
 {

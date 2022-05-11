@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 17:59:57 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/10 22:46:06 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,3 +183,7 @@ void init_array(T* arr, std::size_t size)
 #define LONGVECTOR NAMESPACE::vector<long, track_allocator<long> >
 #define DOUBLEVECTOR NAMESPACE::vector<double, track_allocator<double> >
 #define CHARVECTOR NAMESPACE::vector<char, track_allocator<char> >
+
+struct big_struct {
+    long data[2000];
+};
