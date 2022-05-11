@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:54 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 18:09:41 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 18:12:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,32 @@ void vec_test_insert_mixed()
         CHECK_AND_PRINT_ALL(v);
 
         v.insert(v.begin(), 69);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
+    }
+
+    {
+        STRVECTOR v;
+
+        v.insert(v.end(), s_string, s_string + s_size);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.end() - 10, b_string, b_string + b_size);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin(), "Hello");
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin() + 1, "World");
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.insert(v.begin() + 2, 9, "!");
 
         CHECK_AND_PRINT_ALL(v);
 
