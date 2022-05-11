@@ -36,6 +36,37 @@ print_err() {
     echo $ECHO_FLAG $RED$1$RST
 }
 
+do_test() {
+    LOG_FT="$LOGS/$1/$2"__ft.log
+    LOG_STD="$LOGS/$1/$2"__std.log
+
+    if $CXX $CXXFLAGS -DNAMESPACE=ft $3 track/memory_tracker.cpp track/leak_checker.cpp; then
+        if ! ./a.out > $LOG_FT; then
+            test_fail "$1 $2"
+            continue
+        fi
+    else
+        print_err "Error compiling $3"
+        test_fail "$1 $2"
+        continue
+    fi
+
+    $CXX $CXXFLAGS -DNAMESPACE=std $3 track/memory_tracker.cpp track/leak_checker.cpp
+    ./a.out > $LOG_STD
+
+    DIFF_FILE="$DIFFS/$1/$2"_diff.txt
+    diff -u $LOG_FT $LOG_STD > $DIFF_FILE
+    RESULT=$(cat $DIFF_FILE)
+
+    if [[ ${#RESULT} > 0 ]] ; then
+        test_fail "$1 $2"
+        print_err "Check $DIFF_FILE for $2 diffs with std"
+    else
+        test_success "$1 $2"
+        rm -f $DIFF_FILE
+    fi
+}
+
 test_container() {
     TESTS=$(find "$TEST_DIR/$1" -type f -name '*.cpp' | sort)
 
@@ -48,34 +79,8 @@ test_container() {
     for test in $TESTS; do
         TEST_NAME=$(basename -- $test)
         TEST_NAME=${TEST_NAME%.*}
-        LOG_FT="$LOGS/$1/$TEST_NAME"_ft.log
-        LOG_STD="$LOGS/$1/$TEST_NAME"_std.log
 
-        if $CXX $CXXFLAGS -DNAMESPACE=ft $test track/memory_tracker.cpp track/leak_checker.cpp; then
-            if ! ./a.out > $LOG_FT; then
-                test_fail "$1 $TEST_NAME"
-                continue
-            fi
-        else
-            print_err "Error compiling $test"
-            test_fail "$1 $TEST_NAME"
-            continue
-        fi
-
-        $CXX $CXXFLAGS -DNAMESPACE=std $test track/memory_tracker.cpp track/leak_checker.cpp
-        ./a.out > $LOG_STD
-
-        DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.diff
-        diff -u $LOG_FT $LOG_STD > $DIFF_FILE
-        RESULT=$(cat $DIFF_FILE)
-
-        if [[ ${#RESULT} > 0 ]] ; then
-            test_fail "$1 $TEST_NAME"
-            print_err "Check $DIFF_FILE for $TEST_NAME diffs with std"
-        else
-            test_success "$1 $TEST_NAME"
-            rm -f $DIFF_FILE
-        fi
+        do_test $1 $TEST_NAME $test
     done
 
     rm -f a.out
@@ -86,36 +91,9 @@ test_files() {
 
     for test in $TESTS; do
         TEST_NAME=$test
-        LOG_FT="$LOGS/$1/$TEST_NAME"_ft.log
-        LOG_STD="$LOGS/$1/$TEST_NAME"_std.log
-
         TEST_FILE="tests/$1/$TEST_NAME.cpp"
 
-        if $CXX $CXXFLAGS -DNAMESPACE=ft $TEST_FILE track/memory_tracker.cpp track/leak_checker.cpp; then
-            if ! ./a.out > $LOG_FT; then
-                test_fail "$1 $TEST_NAME"
-                continue
-            fi
-        else
-            print_err "Error compiling $TEST_FILE"
-            test_fail "$1 $TEST_NAME"
-            continue
-        fi
-
-        $CXX $CXXFLAGS -DNAMESPACE=std $TEST_FILE track/memory_tracker.cpp track/leak_checker.cpp
-        ./a.out > $LOG_STD
-
-        DIFF_FILE="$DIFFS/$1/$TEST_NAME"_diff.txt
-        diff -u $LOG_FT $LOG_STD > $DIFF_FILE
-        RESULT=$(cat $DIFF_FILE)
-
-        if [[ ${#RESULT} > 0 ]] ; then
-            test_fail "$1 $TEST_NAME"
-            print_err "Check $DIFF_FILE for $TEST_NAME diffs with std"
-        else
-            test_success "$1 $TEST_NAME"
-            rm -f $DIFF_FILE
-        fi
+        do_test $1 $TEST_NAME $TEST_FILE
     done
 
     rm -f a.out

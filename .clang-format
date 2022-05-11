@@ -19,9 +19,9 @@ EmptyLineBeforeAccessModifier: Always
 FixNamespaceComments: true
 IndentCaseLabels: true
 Language: Cpp
-# PackConstructorInitializers: Never
+PackConstructorInitializers: Never
 PointerAlignment: Left
 ReferenceAlignment: Pointer
-# SeparateDefinitionBlocks: Always
+SeparateDefinitionBlocks: Always
 UseTab: Never
 Standard: Cpp03

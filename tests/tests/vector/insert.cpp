@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:19:05 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 17:41:24 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,70 @@ void vec_test_insert()
     SETUP_ARRAYS();
 
     {
+        STRVECTOR v;
+
+        STRVECTOR::iterator it = v.insert(v.end(), b_string[54]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.end(), b_string[23]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin(), b_string[19]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin() + 1, b_string[0]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin() + 1, b_string[1]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin() + 2, b_string[2]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin() + 3, b_string[3]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.begin() + 2, b_string[4]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.end(), b_string[5]);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
+    }
+
+    {
         INTVECTOR v;
+
+        INTVECTOR::iterator it = v.insert(v.begin(), 64);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        it = v.insert(v.end(), 420);
+
+        PRINT_LINE("It:", *it);
+        CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 }
 
