@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:36:53 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 16:40:22 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:15:48 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void vec_test_ctor_range()
         if (&v1[0] == &v2[0]) {
             PRINT_MSG("Copy ctor doesn't do a deep copy!");
         }
+
+        leak_checker::check_alive_objects();
     }
 
     {
@@ -41,6 +43,8 @@ void vec_test_ctor_range()
         CHARVECTOR v(str.begin(), str.end());
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
@@ -50,6 +54,8 @@ void vec_test_ctor_range()
         CHARVECTOR v(it, end);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
@@ -59,6 +65,8 @@ void vec_test_ctor_range()
         CHARVECTOR v(it, end);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 }
 

@@ -6,11 +6,10 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:29:13 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 13:56:37 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:14:24 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "prelude.hpp"
 #include "vector_prelude.hpp"
 
 void test_vec_assign_mixed()
@@ -31,6 +30,8 @@ void test_vec_assign_mixed()
         v.assign(s_string, s_string + s_size);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
@@ -51,6 +52,8 @@ void test_vec_assign_mixed()
         v.assign(s_double, s_double + s_size);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 }
 

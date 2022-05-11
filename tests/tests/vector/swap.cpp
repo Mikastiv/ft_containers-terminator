@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:58:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 14:38:33 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:18:41 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void vec_test_swap()
 
         CHECK_AND_PRINT_ALL(v1);
         CHECK_AND_PRINT_ALL(v2);
+
+        leak_checker::check_alive_objects();
     }
 }
 

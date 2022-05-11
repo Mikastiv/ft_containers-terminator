@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:09:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 16:43:22 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:13:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void leak_checker::check_leaks()
     }
 }
 
-void leak_checker::check_destructor_calls()
+void leak_checker::check_alive_objects()
 {
     if (tracker.constructs_empty()) {
         std::cout << "========================================\n";
@@ -43,7 +43,7 @@ void leak_checker::check_destructor_calls()
 void leak_checker::check_all()
 {
     check_leaks();
-    check_destructor_calls();
+    check_alive_objects();
 }
 
 memory_tracker leak_checker::tracker = memory_tracker();

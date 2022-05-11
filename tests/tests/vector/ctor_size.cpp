@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:38:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 22:46:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:16:05 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,32 @@ void vec_test_ctor_size()
         INTVECTOR v(64, 1);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
         INTVECTOR v(0, -1);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
         STRVECTOR v(26, b_string[0]);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
         STRVECTOR v(0, b_string[32]);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {

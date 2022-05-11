@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:38:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 16:55:36 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:16:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void vec_test_ctor()
         LONGVECTOR v;
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     // Allocator ctor
@@ -27,6 +29,8 @@ void vec_test_ctor()
         NAMESPACE::vector<char, track_allocator<char> > v(alloc);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 }
 

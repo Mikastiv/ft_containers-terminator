@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:42:14 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 22:15:53 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 16:16:51 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void vec_test_erase_range()
         v.erase(v.begin() + 26, v.end() - 1);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
     }
 
     {
@@ -46,6 +48,8 @@ void vec_test_erase_range()
         v.erase(v.begin() + 1, v.begin() + 2);
 
         CHECK_AND_PRINT_ALL(v);
+
+        leak_checker::check_alive_objects();
 
         v.erase(v.begin(), v.end());
 
