@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 14:35:49 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:11:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ public:
 
     void deallocate(T* p, std::size_t n)
     {
+        if (p == NULL) {
+            std::cout << "Called deallocate on null" << std::endl;
+        }
+
         dealloc_result result = tracker.remove_allocation((void*)p, n);
 
         switch (result) {
@@ -78,6 +82,10 @@ public:
 
     void construct(pointer p, const_reference val)
     {
+        if (p == NULL) {
+            std::cout << "Called construct on null" << std::endl;
+        }
+
         const bool result = tracker.add_constructor_call((void*)p);
 
         if (!result) {
@@ -89,6 +97,10 @@ public:
 
     void destroy(pointer p)
     {
+        if (p == NULL) {
+            std::cout << "Called destroy on null" << std::endl;
+        }
+
         const bool result = tracker.add_destructor_call((void*)p);
 
         if (!result) {
