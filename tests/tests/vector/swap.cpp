@@ -6,15 +6,45 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:58:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 19:58:30 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 14:38:33 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
+#include <algorithm>
 
 void vec_test_swap()
 {
     SETUP_ARRAYS();
+
+    {
+        STRVECTOR v1(s_string, s_string + s_size);
+        STRVECTOR v2(b_string, b_string + b_size);
+
+        v1.swap(v2);
+
+        CHECK_AND_PRINT_ALL(v1);
+        CHECK_AND_PRINT_ALL(v2);
+
+        std::swap(v1, v2);
+
+        CHECK_AND_PRINT_ALL(v1);
+        CHECK_AND_PRINT_ALL(v2);
+
+        v1.resize(0);
+
+        v1.swap(v2);
+
+        CHECK_AND_PRINT_ALL(v1);
+        CHECK_AND_PRINT_ALL(v2);
+
+        v1.resize(0);
+
+        std::swap(v1, v2);
+
+        CHECK_AND_PRINT_ALL(v1);
+        CHECK_AND_PRINT_ALL(v2);
+    }
 }
 
 MAIN(vec_test_swap)

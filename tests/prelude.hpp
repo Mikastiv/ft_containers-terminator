@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 22:46:06 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/11 15:10:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
     }
 
 template <typename Iter>
-void print_vector(Iter first, Iter last)
+void print_range(Iter first, Iter last)
 {
     for (Iter it = first; it != last; ++it) {
         std::cout << *it << " ";
@@ -49,13 +49,13 @@ void print_vector(Iter first, Iter last)
 #define PRINT_VEC(vec)                                                                             \
     {                                                                                              \
         std::cout << "\nVector content:\n";                                                        \
-        print_vector(vec.begin(), vec.end());                                                      \
+        print_range(vec.begin(), vec.end());                                                       \
         std::cout << std::endl;                                                                    \
     }
 
-#define PRINT_SIZE(vec)                                                                            \
+#define PRINT_SIZE(c)                                                                              \
     {                                                                                              \
-        PRINT_LINE("Size:", vec.size());                                                           \
+        PRINT_LINE("Size:", c.size());                                                             \
     }
 
 #define PRINT_ALL(vec)                                                                             \
