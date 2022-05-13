@@ -24,7 +24,7 @@ Run individual tests: <br/>
 
 This tester tracks allocations/dealloctions as well as construction/destruction calls.
 
-Leaks are tracked and bad use of ```std::allocator<T>::construct/std::allocator<T>::destroy```. Construct calls on initialized memory is a bug because the destructor of T will NOT be called. Following the same principle, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
+Leaks are tracked and bad use of ```Allocator::construct/Allocator::destroy```. Construct calls on initialized memory is a bug because the destructor of T will NOT be called. Also, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
 
 For example, consider this struct: <br/>
 ```
@@ -49,4 +49,4 @@ struct object
 };
 ```
 
-A vector of the struct object ```(ft::vector<object>)``` would leak memory everytime the destructor isn't called. Thus when the tester reports N number of alive objects, consider it to be a bug. This also happens when ```std::allocator<T>::construct``` is called on already initialized memory.
+A vector of the struct object ```(ft::vector<object>)``` would leak memory everytime the destructor isn't called. Thus when the tester reports N number of alive objects, consider it to be a bug. This also happens when ```Allocator::construct``` is called on already initialized memory.
