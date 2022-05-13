@@ -22,7 +22,7 @@ Run individual tests: <br/>
 
 ## Summary
 
-This tester tracks allocations/dealloctions as well as contruction/destruction calls.
+This tester tracks allocations/dealloctions as well as construction/destruction calls.
 
 Leaks are tracked and bad use of ```std::allocator<T>::construct/std::allocator<T>::destroy```. Construct calls on initialized memory is a bug because the destructor of T will NOT be called. Following the same principle, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
 
