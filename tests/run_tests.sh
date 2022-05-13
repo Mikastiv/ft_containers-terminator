@@ -89,6 +89,8 @@ test_container() {
 test_files() {
     TESTS=${@:2}
 
+    mkdir -p $LOGS/$1 $DIFFS/$1
+
     for test in $TESTS; do
         TEST_NAME=$test
         TEST_FILE="tests/$1/$TEST_NAME.cpp"
