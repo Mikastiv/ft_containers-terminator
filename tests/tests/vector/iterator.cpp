@@ -6,13 +6,13 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:52:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/12 16:06:16 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/12 21:34:15 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
 
-void vec_test_iterators()
+void vec_test_iterator()
 {
     SETUP_ARRAYS();
 
@@ -42,141 +42,6 @@ void vec_test_iterators()
     {
         INTVECTOR v(b_int, b_int + b_size);
 
-        INTVECTOR::iterator it = v.begin();
-        INTVECTOR::iterator it2 = v.begin();
-        INTVECTOR::const_iterator cit = v.begin();
-        INTVECTOR::const_iterator cit2 = v.begin();
-
-        if (it == v.begin()) {
-            PRINT_MSG("Equal iterators")
-        }
-        if (cit == v.begin()) {
-            PRINT_MSG("Equal const iterators")
-        }
-        if (cit == it) {
-            PRINT_MSG("Equal const iterators.")
-        }
-
-        ++it;
-        cit += 6;
-
-        if (it != v.end()) {
-            PRINT_MSG("Not Equal iterators")
-        }
-        if (cit != v.end()) {
-            PRINT_MSG("Not Equal const iterators")
-        }
-        if (cit != it) {
-            PRINT_MSG("Not Equal const iterators.")
-        }
-
-        if (it < it + 1) {
-            PRINT_MSG("Less than")
-        }
-        if (it + 1 < it) {
-            PRINT_MSG("Less than.")
-        }
-        if (it < it) {
-            PRINT_MSG("Less than..")
-        }
-        if (cit < cit + 1) {
-            PRINT_MSG("Less than...")
-        }
-        if (cit + 1 < cit) {
-            PRINT_MSG("Less than....")
-        }
-        if (cit < cit) {
-            PRINT_MSG("Less than....")
-        }
-        if (it2 < cit2 + 1) {
-            PRINT_MSG("Less than.....")
-        }
-        if (it2 < cit2) {
-            PRINT_MSG("Less than......")
-        }
-
-        if (it <= it + 1) {
-            PRINT_MSG("Less than or equal")
-        }
-        if (it + 1 <= it) {
-            PRINT_MSG("Less than or equal.")
-        }
-        if (it <= it) {
-            PRINT_MSG("Less than or equal..")
-        }
-        if (cit <= cit + 1) {
-            PRINT_MSG("Less than or equal...")
-        }
-        if (cit + 1 <= cit) {
-            PRINT_MSG("Less than or equal....")
-        }
-        if (cit <= cit) {
-            PRINT_MSG("Less than or equal.....")
-        }
-        if (it2 <= cit2 + 1) {
-            PRINT_MSG("Less than or equal......")
-        }
-        if (it2 <= cit2) {
-            PRINT_MSG("Less than or equal.......")
-        }
-
-        if (it > it + 1) {
-            PRINT_MSG("Greater than")
-        }
-        if (it + 1 > it) {
-            PRINT_MSG("Greater than.")
-        }
-        if (it > it) {
-            PRINT_MSG("Greater than..")
-        }
-        if (cit > cit + 1) {
-            PRINT_MSG("Greater than...")
-        }
-        if (cit + 1 > cit) {
-            PRINT_MSG("Greater than....")
-        }
-        if (cit > cit) {
-            PRINT_MSG("Greater than....")
-        }
-        if (it2 + 1 > cit2) {
-            PRINT_MSG("Greater than.....")
-        }
-        if (it2 > cit2) {
-            PRINT_MSG("Greater than......")
-        }
-
-        if (it >= it + 1) {
-            PRINT_MSG("Greater than or equal")
-        }
-        if (it + 1 >= it) {
-            PRINT_MSG("Greater than or equal.")
-        }
-        if (it >= it) {
-            PRINT_MSG("Greater than or equal..")
-        }
-        if (cit >= cit + 1) {
-            PRINT_MSG("Greater than or equal...")
-        }
-        if (cit + 1 >= cit) {
-            PRINT_MSG("Greater than or equal....")
-        }
-        if (cit >= cit) {
-            PRINT_MSG("Greater than or equal.....")
-        }
-        if (it2 >= cit2 + 1) {
-            PRINT_MSG("Greater than or equal......")
-        }
-        if (it2 + 1 >= cit2) {
-            PRINT_MSG("Greater than or equal.......")
-        }
-        if (it2 >= cit2) {
-            PRINT_MSG("Greater than or equal........")
-        }
-    }
-
-    {
-        INTVECTOR v(b_int, b_int + b_size);
-
         INTVECTOR::iterator it1 = v.begin();
         INTVECTOR::iterator it2 = it1;
 
@@ -194,7 +59,62 @@ void vec_test_iterators()
         it2 = it1;
 
         PRINT_LINE("It2:", *it2);
+
+        *it1 = -1;
+
+        CHECK_AND_PRINT_ALL(v);
+    }
+
+    {
+        STRVECTOR v(b_string, b_string + b_size);
+
+        STRVECTOR::iterator it = v.begin();
+        STRVECTOR::const_iterator cit = v.begin() + 34;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it->clear();
+        PRINT_LINE("Cstr:", cit->c_str());
+
+        CHECK_AND_PRINT_ALL(v);
+
+        ++it;
+        it++;
+        ++cit;
+        cit++;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("It:", *it++);
+        PRINT_LINE("It:", *it);
+
+        PRINT_LINE("Cit:", *cit);
+        PRINT_LINE("Cit:", *cit++);
+        PRINT_LINE("Cit:", *cit);
+
+        --it;
+        it--;
+        it--;
+        --cit;
+        --cit;
+        cit--;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("It:", *it--);
+        PRINT_LINE("It:", *it);
+
+        PRINT_LINE("Cit:", *cit);
+        PRINT_LINE("Cit:", *cit--);
+        PRINT_LINE("Cit:", *cit);
+
+        PRINT_LINE("It:", *(it + 6));
+        PRINT_LINE("It:", *(42 + it));
+        PRINT_LINE("It:", *(42 + it - 3));
+        PRINT_LINE("It:", *(v.end() - 6));
+        PRINT_LINE("Cit:", *(cit - 6));
+        PRINT_LINE("Cit:", *(cit + 7));
+        PRINT_LINE("Size:", v.end() - v.begin());
     }
 }
 
-MAIN(vec_test_iterators)
+MAIN(vec_test_iterator)

@@ -117,5 +117,8 @@ run_container_tests() {
 }
 
 run_test_files() {
+    rm -rf $LOGS $DIFFS
+    mkdir -p $LOGS $DIFFS
+
     test_files $1 ${@:2}
 }
