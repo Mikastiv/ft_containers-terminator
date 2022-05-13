@@ -4,3 +4,4 @@ a.out
 .vscode
 *.log
 *.diff
+*.code-workspace
