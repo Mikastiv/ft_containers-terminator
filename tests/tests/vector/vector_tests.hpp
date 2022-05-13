@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:02:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/12 21:15:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/13 14:35:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void vec_test_insert();
 void vec_test_insert_mixed();
 void vec_test_iterator();
 void vec_test_iterator_comparisons();
+void vec_test_riterator();
+void vec_test_riterator_comparisons();
 void vec_test_max_size();
 void vec_test_pop_back();
 void vec_test_push_back();

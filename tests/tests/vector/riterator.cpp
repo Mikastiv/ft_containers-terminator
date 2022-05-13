@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iterator.cpp                                       :+:      :+:    :+:   */
+/*   riterator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 19:52:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 14:33:14 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/13 14:32:20 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/13 14:34:24 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void print(const long& x)
     std::cout << x << '\n';
 }
 
-void vec_test_iterator()
+void vec_test_riterator()
 {
     SETUP_ARRAYS();
 
@@ -31,12 +31,12 @@ void vec_test_iterator()
         INTVECTOR v1;
         const INTVECTOR v2;
 
-        if (v1.begin() != v1.end()) {
+        if (v1.rbegin() != v1.rend()) {
             PRINT_MSG("Iterator error");
         }
 
-        INTVECTOR::const_iterator it = v2.begin();
-        if (it != v2.end()) {
+        INTVECTOR::const_reverse_iterator it = v2.rbegin();
+        if (it != v2.rend()) {
             PRINT_MSG("Iterator error");
         }
     }
@@ -44,17 +44,17 @@ void vec_test_iterator()
     {
         INTVECTOR v(b_int, b_int + b_size);
 
-        INTVECTOR::iterator it1 = v.begin();
-        INTVECTOR::iterator it2 = it1;
+        INTVECTOR::reverse_iterator it1 = v.rbegin();
+        INTVECTOR::reverse_iterator it2 = it1;
 
         PRINT_LINE("It1:", *it1);
         PRINT_LINE("It2:", *it2);
 
-        it1 = v.begin() + 9;
+        it1 = v.rbegin() + 9;
 
         PRINT_LINE("It1:", *it1);
 
-        it1 = v.end() - 1;
+        it1 = v.rend() - 1;
 
         PRINT_LINE("It1:", *it1);
 
@@ -70,8 +70,8 @@ void vec_test_iterator()
     {
         STRVECTOR v(b_string, b_string + b_size);
 
-        STRVECTOR::iterator it = v.begin();
-        STRVECTOR::const_iterator cit = v.begin() + 34;
+        STRVECTOR::reverse_iterator it = v.rbegin();
+        STRVECTOR::const_reverse_iterator cit = v.rbegin() + 34;
 
         PRINT_LINE("It:", *it);
         PRINT_LINE("Cit:", *cit);
@@ -112,13 +112,13 @@ void vec_test_iterator()
         PRINT_LINE("It:", *(it + 6));
         PRINT_LINE("It:", *(42 + it));
         PRINT_LINE("It:", *(42 + it - 3));
-        PRINT_LINE("It:", *(v.end() - 6));
+        PRINT_LINE("It:", *(v.rend() - 6));
         PRINT_LINE("Cit:", *(cit - 6));
         PRINT_LINE("Cit:", *(cit + 7));
-        PRINT_LINE("Size:", v.end() - v.begin());
+        PRINT_LINE("Size:", v.rend() - v.rbegin());
 
-        it = v.begin() + 25;
-        cit = v.begin() + 25;
+        it = v.rbegin() + 25;
+        cit = v.rbegin() + 25;
 
         PRINT_LINE("It:", *it);
         PRINT_LINE("Cit:", *cit);
@@ -159,11 +159,11 @@ void vec_test_iterator()
     {
         LONGVECTOR v(b_long, b_long + b_size);
 
-        std::transform(v.begin(), v.end() - 10, v.begin(), &times2);
+        std::transform(v.rbegin(), v.rend() - 10, v.rbegin(), &times2);
 
         CHECK_AND_PRINT_ALL(v);
 
-        std::reverse(v.begin(), v.end());
+        std::reverse(v.rbegin(), v.rend());
 
         CHECK_AND_PRINT_ALL(v);
     }
@@ -171,15 +171,15 @@ void vec_test_iterator()
     {
         const LONGVECTOR v(b_long, b_long + b_size);
 
-        std::for_each(v.begin(), v.end(), &print);
+        std::for_each(v.rbegin(), v.rend(), &print);
     }
 
     {
         INTVECTOR v(s_int, s_int + s_size);
-        INTVECTOR::iterator it = v.begin();
-        INTVECTOR::const_iterator cit(it);
+        INTVECTOR::reverse_iterator it = v.rbegin();
+        INTVECTOR::const_reverse_iterator cit(it);
         (void)cit;
     }
 }
 
-MAIN(vec_test_iterator)
+MAIN(vec_test_riterator)
