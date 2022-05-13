@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 20:00:20 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/09 20:07:49 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/13 16:47:18 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 
 void stack_check_typedefs();
 void stack_check_types();
-void stack_test_comparisons();
+void stack_test_comparisons_eq();
+void stack_test_comparisons_ne();
+void stack_test_comparisons_lt();
+void stack_test_comparisons_le();
+void stack_test_comparisons_gt();
+void stack_test_comparisons_ge();
 void stack_test_misc();

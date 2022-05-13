@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:59:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 16:36:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/13 17:12:06 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,11 @@ void vec_test_random()
         PRINT_MSG(v.back());
         PRINT_MSG(v.front());
 
+        PRINT_LINE("Empty:", (v.empty() ? "true" : "false"));
+
         v.clear();
+
+        PRINT_LINE("Empty:", (v.empty() ? "true" : "false"));
 
         CHECK_AND_PRINT_ALL(v);
 
