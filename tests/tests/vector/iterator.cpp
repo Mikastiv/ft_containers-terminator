@@ -6,11 +6,22 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:52:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/12 21:34:15 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/12 23:50:22 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
+#include <algorithm>
+
+long times2(const long& x)
+{
+    return x * 2;
+}
+
+void print(const long& x)
+{
+    std::cout << x << '\n';
+}
 
 void vec_test_iterator()
 {
@@ -114,6 +125,69 @@ void vec_test_iterator()
         PRINT_LINE("Cit:", *(cit - 6));
         PRINT_LINE("Cit:", *(cit + 7));
         PRINT_LINE("Size:", v.end() - v.begin());
+
+        it = v.begin() + 25;
+        cit = v.begin() + 25;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it += 12;
+        cit += 12;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it += 0;
+        cit += 0;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it += 4;
+        cit += 4;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it -= 0;
+        cit -= 0;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+
+        it -= 22;
+        cit -= 22;
+
+        PRINT_LINE("It:", *it);
+        PRINT_LINE("Cit:", *cit);
+        PRINT_LINE("It + 10:", it[10]);
+        PRINT_LINE("Cit + 10:", cit[10]);
+    }
+
+    {
+        LONGVECTOR v(b_long, b_long + b_size);
+
+        std::transform(v.begin(), v.end() - 10, v.begin(), &times2);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        std::reverse(v.begin(), v.end());
+
+        CHECK_AND_PRINT_ALL(v);
+    }
+
+    {
+        const LONGVECTOR v(b_long, b_long + b_size);
+
+        std::for_each(v.begin(), v.end(), &print);
+    }
+
+    {
+        INTVECTOR v(s_int, s_int + s_size);
+        INTVECTOR::iterator it = v.begin();
+        INTVECTOR::const_iterator cit(it);
+        (void)cit;
     }
 }
 
