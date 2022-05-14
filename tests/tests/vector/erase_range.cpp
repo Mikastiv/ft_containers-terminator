@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:42:14 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:16:51 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:02 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_erase_range()
     SETUP_ARRAYS();
 
     {
-        LONGVECTOR v;
+        longvector v;
 
         v.erase(v.begin(), v.end());
 
@@ -25,7 +25,7 @@ void vec_test_erase_range()
     }
 
     {
-        LONGVECTOR v(b_int, b_int + b_size);
+        longvector v(b_int, b_int + b_size);
 
         v.erase(v.end(), v.end());
 
@@ -43,7 +43,7 @@ void vec_test_erase_range()
     }
 
     {
-        INTVECTOR v(37, -5);
+        intvector v(37, -5);
 
         v.erase(v.begin() + 1, v.begin() + 2);
 

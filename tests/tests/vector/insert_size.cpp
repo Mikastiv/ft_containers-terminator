@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 17:40:49 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void vec_test_insert_size()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v;
+        intvector v;
 
         v.insert(v.begin(), 0, 64);
 
@@ -60,7 +60,7 @@ void vec_test_insert_size()
     }
 
     {
-        STRVECTOR v(5000, "Test");
+        strvector v(5000, "Test");
 
         try {
             v.insert(v.begin() + 115, (std::size_t)std::numeric_limits<std::ptrdiff_t>::max(),

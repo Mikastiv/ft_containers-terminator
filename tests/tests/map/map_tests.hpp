@@ -6,11 +6,11 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:52:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 19:00:12 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:04:35 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 void map_check_typedefs();
-void map_check_types();
+void map_test_ctor();

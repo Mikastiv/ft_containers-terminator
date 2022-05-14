@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:56:25 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:23 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void vec_test_push_back()
 {
     {
-        DOUBLEVECTOR v;
+        doublevector v;
 
         for (int i = 0; i < 26; ++i) {
             v.push_back(45.0123);

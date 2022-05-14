@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:58:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:41 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void vec_test_swap()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v1(s_string, s_string + s_size);
-        STRVECTOR v2(b_string, b_string + b_size);
+        strvector v1(s_string, s_string + s_size);
+        strvector v2(b_string, b_string + b_size);
 
         v1.swap(v2);
 

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:57:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:31 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_reserve()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v;
+        intvector v;
 
         v.reserve(64);
 
@@ -45,7 +45,7 @@ void vec_test_reserve()
     }
 
     {
-        INTVECTOR v(s_int, s_int + s_size);
+        intvector v(s_int, s_int + s_size);
 
         v.reserve(0);
 

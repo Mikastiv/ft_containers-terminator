@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:30:42 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 14:32:07 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void vec_test_riterator_comparisons()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v(b_int, b_int + b_size);
+        intvector v(b_int, b_int + b_size);
 
-        INTVECTOR::reverse_iterator it = v.rbegin();
-        INTVECTOR::reverse_iterator it2 = v.rbegin();
-        INTVECTOR::const_reverse_iterator cit = v.rbegin();
-        INTVECTOR::const_reverse_iterator cit2 = v.rbegin();
+        intvector::reverse_iterator it = v.rbegin();
+        intvector::reverse_iterator it2 = v.rbegin();
+        intvector::const_reverse_iterator cit = v.rbegin();
+        intvector::const_reverse_iterator cit2 = v.rbegin();
 
         if (it == v.rbegin()) {
             PRINT_MSG("Equal iterators")

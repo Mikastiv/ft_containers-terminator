@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:59:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 17:12:06 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_random()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.insert(v.end(), s_string, s_string + s_size);
 
@@ -30,7 +30,7 @@ void vec_test_random()
         PRINT_MSG(v[6]);
         PRINT_MSG(v.at(6));
 
-        STRVECTOR::iterator it = v.erase(v.end() - 1);
+        strvector::iterator it = v.erase(v.end() - 1);
 
         if (it == v.end()) {
             PRINT_MSG("End");
@@ -52,7 +52,7 @@ void vec_test_random()
 
         CHECK_AND_PRINT_ALL(v);
 
-        for (STRVECTOR::const_reverse_iterator crit = v.rbegin(); crit != v.rend(); ++crit) {
+        for (strvector::const_reverse_iterator crit = v.rbegin(); crit != v.rend(); ++crit) {
             PRINT_MSG(*crit);
         }
 
@@ -83,7 +83,7 @@ void vec_test_random()
 
         CHECK_AND_PRINT_ALL(v);
 
-        STRVECTOR v2;
+        strvector v2;
 
         if (v2 < v) {
             PRINT_MSG("Small");

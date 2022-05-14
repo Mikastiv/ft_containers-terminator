@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:47:35 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:14:56 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void vec_test_assign()
 {
     {
-        CHARVECTOR v;
+        charvector v;
 
         v.assign(0, 'c');
 
@@ -41,7 +41,7 @@ void vec_test_assign()
     }
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.assign(0, "");
 

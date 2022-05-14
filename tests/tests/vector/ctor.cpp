@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:38:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:16:19 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void vec_test_ctor()
 {
     // Default
     {
-        LONGVECTOR v;
+        longvector v;
 
         CHECK_AND_PRINT_ALL(v);
 

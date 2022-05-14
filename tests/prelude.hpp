@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 19:06:52 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:05:55 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,37 +46,9 @@ void print_range(Iter first, Iter last)
     std::cout << std::endl;
 }
 
-#define PRINT_VEC(vec)                                                                             \
-    {                                                                                              \
-        std::cout << "\nVector content:\n";                                                        \
-        print_range(vec.begin(), vec.end());                                                       \
-        std::cout << std::endl;                                                                    \
-    }
-
 #define PRINT_SIZE(c)                                                                              \
     {                                                                                              \
         PRINT_LINE("Size:", c.size());                                                             \
-    }
-
-#define PRINT_ALL(vec)                                                                             \
-    {                                                                                              \
-        PRINT_SIZE(vec);                                                                           \
-        PRINT_VEC(vec);                                                                            \
-    }
-
-#define CHECK_CAPACITY(vec)                                                                        \
-    {                                                                                              \
-        if (!(vec.capacity() >= vec.size())) {                                                     \
-            PRINT_MSG("Capacity is smaller than size");                                            \
-        } else {                                                                                   \
-            PRINT_MSG("Capacity Ok");                                                              \
-        }                                                                                          \
-    }
-
-#define CHECK_AND_PRINT_ALL(vec)                                                                   \
-    {                                                                                              \
-        CHECK_CAPACITY(vec);                                                                       \
-        PRINT_ALL(vec);                                                                            \
     }
 
 #define CATCH_UNHANDLED_EX()                                                                       \

@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_allocator.cpp                                  :+:      :+:    :+:   */
+/*   ctor.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 19:48:03 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/14 19:03:47 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/14 19:53:20 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "map_prelude.hpp"
 
-void vec_test_get_allocator()
+void map_test_ctor()
 {
-    intvector v;
-
-    track_allocator<int> alloc = v.get_allocator();
-
-    int* buff = alloc.allocate(2048 * 5);
-
-    std::cout << "a leak is normal here\n";
-    leak_checker::check_leaks();
-
-    alloc.deallocate(buff, 2048 * 5);
+    // Default
+    {
+        
+    }
 }
 
-MAIN(vec_test_get_allocator)
+MAIN(map_test_ctor)

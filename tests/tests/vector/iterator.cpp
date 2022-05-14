@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:52:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 14:33:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ void vec_test_iterator()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v1;
-        const INTVECTOR v2;
+        intvector v1;
+        const intvector v2;
 
         if (v1.begin() != v1.end()) {
             PRINT_MSG("Iterator error");
         }
 
-        INTVECTOR::const_iterator it = v2.begin();
+        intvector::const_iterator it = v2.begin();
         if (it != v2.end()) {
             PRINT_MSG("Iterator error");
         }
     }
 
     {
-        INTVECTOR v(b_int, b_int + b_size);
+        intvector v(b_int, b_int + b_size);
 
-        INTVECTOR::iterator it1 = v.begin();
-        INTVECTOR::iterator it2 = it1;
+        intvector::iterator it1 = v.begin();
+        intvector::iterator it2 = it1;
 
         PRINT_LINE("It1:", *it1);
         PRINT_LINE("It2:", *it2);
@@ -68,10 +68,10 @@ void vec_test_iterator()
     }
 
     {
-        STRVECTOR v(b_string, b_string + b_size);
+        strvector v(b_string, b_string + b_size);
 
-        STRVECTOR::iterator it = v.begin();
-        STRVECTOR::const_iterator cit = v.begin() + 34;
+        strvector::iterator it = v.begin();
+        strvector::const_iterator cit = v.begin() + 34;
 
         PRINT_LINE("It:", *it);
         PRINT_LINE("Cit:", *cit);
@@ -157,7 +157,7 @@ void vec_test_iterator()
     }
 
     {
-        LONGVECTOR v(b_long, b_long + b_size);
+        longvector v(b_long, b_long + b_size);
 
         std::transform(v.begin(), v.end() - 10, v.begin(), &times2);
 
@@ -169,15 +169,15 @@ void vec_test_iterator()
     }
 
     {
-        const LONGVECTOR v(b_long, b_long + b_size);
+        const longvector v(b_long, b_long + b_size);
 
         std::for_each(v.begin(), v.end(), &print);
     }
 
     {
-        INTVECTOR v(s_int, s_int + s_size);
-        INTVECTOR::iterator it = v.begin();
-        INTVECTOR::const_iterator cit(it);
+        intvector v(s_int, s_int + s_size);
+        intvector::iterator it = v.begin();
+        intvector::const_iterator cit(it);
         (void)cit;
     }
 }

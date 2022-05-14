@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:57:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:35 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_resize()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.resize(14, "HelloWorld");
 

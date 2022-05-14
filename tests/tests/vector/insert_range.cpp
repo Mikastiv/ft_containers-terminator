@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:49:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:08 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void vec_test_insert_range()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.insert(v.begin(), v.begin(), v.begin());
 
@@ -54,7 +54,7 @@ void vec_test_insert_range()
     {
         std::list<int> li(s_int, s_int + s_size);
 
-        INTVECTOR v(5, 1);
+        intvector v(5, 1);
 
         v.insert(v.begin() + 3, li.begin(), li.end());
 
@@ -67,7 +67,7 @@ void vec_test_insert_range()
         std::istringstream str("1 2 3 4 5 6 7 8 9 0 A B C D E F");
         std::istreambuf_iterator<char> it(str), end;
 
-        CHARVECTOR v(2, 'U');
+        charvector v(2, 'U');
 
         v.insert(v.end(), it, end);
 

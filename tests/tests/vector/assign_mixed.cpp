@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:29:13 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:14:24 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void test_vec_assign_mixed()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.assign(b_string, b_string + b_size);
 
@@ -35,7 +35,7 @@ void test_vec_assign_mixed()
     }
 
     {
-        DOUBLEVECTOR v;
+        doublevector v;
 
         v.assign(b_double, b_double + b_size);
 

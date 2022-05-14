@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:44:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:16:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_erase_mixed()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v(b_string, b_string + b_size);
+        strvector v(b_string, b_string + b_size);
 
         v.erase(v.begin(), v.begin());
 
@@ -39,7 +39,7 @@ void vec_test_erase_mixed()
 
         CHECK_AND_PRINT_ALL(v);
 
-        STRVECTOR::iterator it = v.erase(v.begin() + 9);
+        strvector::iterator it = v.erase(v.begin() + 9);
 
         PRINT_LINE("It:", *it);
         CHECK_AND_PRINT_ALL(v);

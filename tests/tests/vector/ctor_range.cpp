@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:36:53 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:15:48 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ void vec_test_ctor_range()
     SETUP_ARRAYS();
 
     {
-        DOUBLEVECTOR v(s_double, s_double + s_size);
+        doublevector v(s_double, s_double + s_size);
 
         CHECK_AND_PRINT_ALL(v);
     }
 
     {
-        STRVECTOR v1(s_string, s_string + s_size);
+        strvector v1(s_string, s_string + s_size);
 
         CHECK_AND_PRINT_ALL(v1);
 
-        STRVECTOR v2(v1.begin(), v1.end());
+        strvector v2(v1.begin(), v1.end());
 
         CHECK_AND_PRINT_ALL(v2);
 
@@ -40,7 +40,7 @@ void vec_test_ctor_range()
 
     {
         std::string str = "Hello World!";
-        CHARVECTOR v(str.begin(), str.end());
+        charvector v(str.begin(), str.end());
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -51,7 +51,7 @@ void vec_test_ctor_range()
         std::istringstream str("");
         std::istreambuf_iterator<char> it(str), end;
 
-        CHARVECTOR v(it, end);
+        charvector v(it, end);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -62,7 +62,7 @@ void vec_test_ctor_range()
         std::istringstream str("1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ");
         std::istreambuf_iterator<char> it(str), end;
 
-        CHARVECTOR v(it, end);
+        charvector v(it, end);
 
         CHECK_AND_PRINT_ALL(v);
 

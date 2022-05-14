@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:56:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:14:45 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_assign_range()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v;
+        strvector v;
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -37,7 +37,7 @@ void vec_test_assign_range()
     }
 
     {
-        LONGVECTOR v;
+        longvector v;
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -53,7 +53,7 @@ void vec_test_assign_range()
     }
 
     {
-        INTVECTOR v(s_int, s_int + s_size);
+        intvector v(s_int, s_int + s_size);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -66,7 +66,7 @@ void vec_test_assign_range()
     }
 
     {
-        CHARVECTOR v;
+        charvector v;
 
         std::istringstream str("1 2 3 4 5 6 7");
         std::istreambuf_iterator<char> it(str), end;

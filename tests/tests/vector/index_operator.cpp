@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:48:48 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 14:51:09 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void vec_test_index_operator()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v(s_int, s_int + s_size);
+        intvector v(s_int, s_int + s_size);
 
         PRINT_LINE("Index 0:", v[0]);
 
-        INTVECTOR::reference value = v[26];
+        intvector::reference value = v[26];
 
         PRINT_LINE("Index 26:", value);
 
@@ -29,7 +29,7 @@ void vec_test_index_operator()
 
         CHECK_AND_PRINT_ALL(v);
 
-        INTVECTOR::reference value2 = v[31];
+        intvector::reference value2 = v[31];
 
         PRINT_LINE("Index 31:", value2);
 
@@ -43,15 +43,15 @@ void vec_test_index_operator()
     }
 
     {
-        const INTVECTOR v(s_int, s_int + s_size);
+        const intvector v(s_int, s_int + s_size);
 
         PRINT_LINE("Index 0:", v[0]);
 
-        INTVECTOR::const_reference value = v[26];
+        intvector::const_reference value = v[26];
 
         PRINT_LINE("Index 26:", value);
 
-        INTVECTOR::const_reference value2 = v[31];
+        intvector::const_reference value2 = v[31];
 
         PRINT_LINE("Index 31:", value2);
 

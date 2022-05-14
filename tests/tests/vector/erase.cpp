@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:43:28 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:17:07 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void vec_test_erase()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v(b_int, b_int + b_size - 5);
+        intvector v(b_int, b_int + b_size - 5);
 
-        INTVECTOR::iterator it = v.erase(v.begin() + 26);
+        intvector::iterator it = v.erase(v.begin() + 26);
 
         PRINT_LINE("It:", *it);
         CHECK_AND_PRINT_ALL(v);
@@ -43,9 +43,9 @@ void vec_test_erase()
     }
 
     {
-        INTVECTOR v(1, 5);
+        intvector v(1, 5);
 
-        INTVECTOR::iterator it = v.erase(v.begin());
+        intvector::iterator it = v.erase(v.begin());
 
         if (it != v.end()) {
             PRINT_MSG("Wrong iterator");

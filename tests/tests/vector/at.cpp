@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:32:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 14:07:43 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void vec_test_at()
     SETUP_ARRAYS();
 
     {
-        CHARVECTOR v(64, 'a');
+        charvector v(64, 'a');
 
         try {
-            CHARVECTOR::reference c = v.at(38);
+            charvector::reference c = v.at(38);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
@@ -32,10 +32,10 @@ void vec_test_at()
     }
 
     {
-        INTVECTOR v(99, 64);
+        intvector v(99, 64);
 
         try {
-            INTVECTOR::reference c = v.at(99);
+            intvector::reference c = v.at(99);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
@@ -46,10 +46,10 @@ void vec_test_at()
     }
 
     {
-        LONGVECTOR v;
+        longvector v;
 
         try {
-            LONGVECTOR::reference c = v.at(0);
+            longvector::reference c = v.at(0);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
@@ -60,10 +60,10 @@ void vec_test_at()
     }
 
     {
-        const CHARVECTOR v(64, 'a');
+        const charvector v(64, 'a');
 
         try {
-            CHARVECTOR::const_reference c = v.at(38);
+            charvector::const_reference c = v.at(38);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
@@ -74,10 +74,10 @@ void vec_test_at()
     }
 
     {
-        const INTVECTOR v(99, 64);
+        const intvector v(99, 64);
 
         try {
-            INTVECTOR::const_reference c = v.at(99);
+            intvector::const_reference c = v.at(99);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
@@ -88,10 +88,10 @@ void vec_test_at()
     }
 
     {
-        const LONGVECTOR v;
+        const longvector v;
 
         try {
-            LONGVECTOR::const_reference c = v.at(0);
+            longvector::const_reference c = v.at(0);
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {

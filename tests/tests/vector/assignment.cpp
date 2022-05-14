@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:32:09 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:18:51 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void vec_test_assignment()
     SETUP_ARRAYS();
 
     {
-        STRVECTOR v1;
-        STRVECTOR v2;
+        strvector v1;
+        strvector v2;
 
         v1 = v2;
 
         CHECK_AND_PRINT_ALL(v1);
 
-        v2 = STRVECTOR(b_string, b_string + b_size);
+        v2 = strvector(b_string, b_string + b_size);
 
         CHECK_AND_PRINT_ALL(v2);
 
@@ -32,7 +32,7 @@ void vec_test_assignment()
 
         CHECK_AND_PRINT_ALL(v1);
 
-        v2 = STRVECTOR(s_string, s_string + s_size);
+        v2 = strvector(s_string, s_string + s_size);
 
         CHECK_AND_PRINT_ALL(v2);
 

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:54 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 18:12:08 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_insert_mixed()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v;
+        intvector v;
 
         v.insert(v.end(), s_int, s_int + s_size - 10);
 
@@ -27,7 +27,7 @@ void vec_test_insert_mixed()
 
         CHECK_AND_PRINT_ALL(v);
 
-        INTVECTOR::iterator it = v.insert(v.begin(), 64);
+        intvector::iterator it = v.insert(v.begin(), 64);
 
         PRINT_LINE("It:", *it);
         CHECK_AND_PRINT_ALL(v);
@@ -54,7 +54,7 @@ void vec_test_insert_mixed()
     }
 
     {
-        STRVECTOR v;
+        strvector v;
 
         v.insert(v.end(), s_string, s_string + s_size);
 

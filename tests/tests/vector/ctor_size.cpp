@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:38:17 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 16:16:05 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void vec_test_ctor_size()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v(64, 1);
+        intvector v(64, 1);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -25,7 +25,7 @@ void vec_test_ctor_size()
     }
 
     {
-        INTVECTOR v(0, -1);
+        intvector v(0, -1);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -33,7 +33,7 @@ void vec_test_ctor_size()
     }
 
     {
-        STRVECTOR v(26, b_string[0]);
+        strvector v(26, b_string[0]);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -41,7 +41,7 @@ void vec_test_ctor_size()
     }
 
     {
-        STRVECTOR v(0, b_string[32]);
+        strvector v(0, b_string[32]);
 
         CHECK_AND_PRINT_ALL(v);
 

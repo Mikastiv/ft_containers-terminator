@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:34:26 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/10 15:53:40 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:50:38 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void vec_test_clear()
 {
     {
-        INTVECTOR v;
+        intvector v;
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -25,7 +25,7 @@ void vec_test_clear()
     }
 
     {
-        INTVECTOR v(1, 64);
+        intvector v(1, 64);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -39,7 +39,7 @@ void vec_test_clear()
     }
 
     {
-        INTVECTOR v(64, 420);
+        intvector v(64, 420);
 
         CHECK_AND_PRINT_ALL(v);
 

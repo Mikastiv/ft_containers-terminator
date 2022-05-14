@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:32:20 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 14:34:24 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,24 +28,24 @@ void vec_test_riterator()
     SETUP_ARRAYS();
 
     {
-        INTVECTOR v1;
-        const INTVECTOR v2;
+        intvector v1;
+        const intvector v2;
 
         if (v1.rbegin() != v1.rend()) {
             PRINT_MSG("Iterator error");
         }
 
-        INTVECTOR::const_reverse_iterator it = v2.rbegin();
+        intvector::const_reverse_iterator it = v2.rbegin();
         if (it != v2.rend()) {
             PRINT_MSG("Iterator error");
         }
     }
 
     {
-        INTVECTOR v(b_int, b_int + b_size);
+        intvector v(b_int, b_int + b_size);
 
-        INTVECTOR::reverse_iterator it1 = v.rbegin();
-        INTVECTOR::reverse_iterator it2 = it1;
+        intvector::reverse_iterator it1 = v.rbegin();
+        intvector::reverse_iterator it2 = it1;
 
         PRINT_LINE("It1:", *it1);
         PRINT_LINE("It2:", *it2);
@@ -68,10 +68,10 @@ void vec_test_riterator()
     }
 
     {
-        STRVECTOR v(b_string, b_string + b_size);
+        strvector v(b_string, b_string + b_size);
 
-        STRVECTOR::reverse_iterator it = v.rbegin();
-        STRVECTOR::const_reverse_iterator cit = v.rbegin() + 34;
+        strvector::reverse_iterator it = v.rbegin();
+        strvector::const_reverse_iterator cit = v.rbegin() + 34;
 
         PRINT_LINE("It:", *it);
         PRINT_LINE("Cit:", *cit);
@@ -157,7 +157,7 @@ void vec_test_riterator()
     }
 
     {
-        LONGVECTOR v(b_long, b_long + b_size);
+        longvector v(b_long, b_long + b_size);
 
         std::transform(v.rbegin(), v.rend() - 10, v.rbegin(), &times2);
 
@@ -169,15 +169,15 @@ void vec_test_riterator()
     }
 
     {
-        const LONGVECTOR v(b_long, b_long + b_size);
+        const longvector v(b_long, b_long + b_size);
 
         std::for_each(v.rbegin(), v.rend(), &print);
     }
 
     {
-        INTVECTOR v(s_int, s_int + s_size);
-        INTVECTOR::reverse_iterator it = v.rbegin();
-        INTVECTOR::const_reverse_iterator cit(it);
+        intvector v(s_int, s_int + s_size);
+        intvector::reverse_iterator it = v.rbegin();
+        intvector::const_reverse_iterator cit(it);
         (void)cit;
     }
 }
