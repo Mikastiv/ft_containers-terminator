@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/11 14:11:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/14 22:03:53 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ public:
     };
 
 public:
+    track_allocator() {}
+
+    track_allocator(const track_allocator&) {}
+
+    template <typename U>
+    track_allocator(const track_allocator<U>&) {}
+
+    track_allocator& operator=(const track_allocator&) {}
+
+    ~track_allocator() {}
+
+public:
     bool operator==(const track_allocator&)
     {
         return true;
@@ -48,6 +60,16 @@ public:
     }
 
 public:
+    pointer address(reference x) const
+    {
+        return &x;
+    }
+
+    const_pointer address(const_reference x) const
+    {
+        return &x;
+    }
+
     T* allocate(std::size_t n, const void* hint = 0)
     {
         T* block = std::allocator<T>().allocate(n, hint);
