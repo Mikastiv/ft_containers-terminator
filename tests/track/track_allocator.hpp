@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 22:03:53 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/15 01:46:01 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ public:
 
     template <typename U>
     track_allocator(const track_allocator<U>&) {}
-
-    track_allocator& operator=(const track_allocator&) {}
 
     ~track_allocator() {}
 
