@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/15 01:46:01 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/15 03:37:25 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,11 @@ public:
             case DEALLOC_BAD_SIZE:
                 std::cout << "Called deallocate with wrong block size: " << n << " (expected "
                           << tracker.block_size(p) << ")" << std::endl;
+                break;
             default:
-                std::allocator<T>().deallocate(p, n);
+                ;
         }
+        std::allocator<T>().deallocate(p, n);
     }
 
     size_type max_size() const

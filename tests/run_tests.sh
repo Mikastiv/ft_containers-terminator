@@ -51,7 +51,9 @@ do_test() {
         return
     fi
 
-    $CXX $CXXFLAGS -DNAMESPACE=std $3 track/memory_tracker.cpp track/leak_checker.cpp
+    if ! $CXX $CXXFLAGS -DNAMESPACE=std $3 track/memory_tracker.cpp track/leak_checker.cpp; then
+        print_err "warning: std test failed to compile"
+    fi
     ./a.out > $LOG_STD
 
     DIFF_FILE="$DIFFS/$1/$2"_diff.txt
