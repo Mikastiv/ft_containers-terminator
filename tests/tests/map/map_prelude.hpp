@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:49:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 09:46:44 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:45:09 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ template <typename It>
 void print_map(It first, It last)
 {
     for (; first != last; ++first) {
-        std::cout << "K: " << first->first << " V: " << first->second << std::endl;
+        std::cout << "K: " << first->first << " V: " << first->second << " ";
     }
+    std::cout << std::endl;
 }
 
 #define PRINT_MAP(map)                                                                             \
