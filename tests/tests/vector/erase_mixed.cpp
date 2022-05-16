@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:44:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ void vec_test_erase_mixed()
 
         PRINT_LINE("It:", *it);
         CHECK_AND_PRINT_ALL(v);
-
-        leak_checker::check_alive_objects();
 
         v.erase(v.begin(), v.end());
 

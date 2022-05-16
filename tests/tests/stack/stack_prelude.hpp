@@ -6,13 +6,12 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:48:53 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 17:23:48 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:19:59 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include "vector.hpp"
 #include "stack.hpp"
 #include <stack>
 #include <vector>

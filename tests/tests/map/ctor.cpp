@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:03:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 01:43:59 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void map_test_ctor()
 
         PRINT_ALL(m);
 
-        leak_checker::check_alive_objects();
+        
     }
 
     // Compare/Allocator
@@ -30,7 +30,7 @@ void map_test_ctor()
 
         PRINT_ALL(m);
 
-        leak_checker::check_alive_objects();
+        
     }
 }
 

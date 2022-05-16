@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "vector_prelude.hpp"
 
 void vec_test_comparisons_le()

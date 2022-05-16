@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ctor.cpp                                           :+:      :+:    :+:   */
+/*   ctor_copy.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 19:38:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/16 09:02:42 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/16 10:11:36 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "map_prelude.hpp"
 
-void vec_test_ctor()
+void map_test_ctor_copy()
 {
-    // Default
-    {
-        longvector v;
+    SETUP_ARRAYS();
 
-        CHECK_AND_PRINT_ALL(v);
+    {
+        intmap m1(intstr_arr, intstr_arr + intstr_size);
+
+        PRINT_ALL(m1);
+
+        intmap m2(m1);
+
+        PRINT_ALL(m2);
     }
 
-    // Allocator ctor
     {
-        track_allocator<char> alloc;
-        NAMESPACE::vector<char, track_allocator<char> > v(alloc);
+        strmap m1(strstr_arr, strstr_arr + strstr_size);
 
-        CHECK_AND_PRINT_ALL(v);
+        PRINT_ALL(m1);
+
+        strmap m2(m1);
+
+        PRINT_ALL(m2);
     }
 }
 
-MAIN(vec_test_ctor)
+MAIN(map_test_ctor_copy)

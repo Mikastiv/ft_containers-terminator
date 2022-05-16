@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:51:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void vec_test_insert_size()
         v.insert(v.end(), 18, 420);
 
         CHECK_AND_PRINT_ALL(v);
-
-        leak_checker::check_alive_objects();
     }
 
     {

@@ -56,7 +56,7 @@ do_test() {
     fi
     ./a.out > $LOG_STD
 
-    DIFF_FILE="$DIFFS/$1/$2"_diff.txt
+    DIFF_FILE="$DIFFS/$1/$2".diff
     diff -u $LOG_FT $LOG_STD > $DIFF_FILE
     RESULT=$(cat $DIFF_FILE)
 
