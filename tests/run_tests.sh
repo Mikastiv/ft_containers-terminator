@@ -46,7 +46,7 @@ do_test() {
             return
         fi
     else
-        print_err "Error compiling $3"
+        print_err "error compiling $3"
         test_fail "$1 $2"
         return
     fi
