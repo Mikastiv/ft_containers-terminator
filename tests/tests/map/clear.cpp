@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_tests.hpp                                      :+:      :+:    :+:   */
+/*   clear.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 18:52:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/17 17:14:15 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/17 16:36:08 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/17 16:37:53 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "map_prelude.hpp"
 
-void map_check_typedefs();
-void map_test_ctor();
-void map_test_ctor_copy();
-void map_test_ctor_range();
-void map_test_assignment();
-void map_test_get_allocator();
-void map_test_at();
-void map_test_index_operator();
-void map_test_iterator();
-void map_test_riterator();
-void map_test_empty();
-void map_test_insert();
-void map_test_insert_hint();
+void map_test_clear()
+{
+    SETUP_ARRAYS();
+
+    {
+        strmap m;
+
+        PRINT_ALL(m);
+
+        m.clear();
+
+        PRINT_ALL(m);
+
+        m.insert(strstr_arr, strstr_arr + 16);
+
+        PRINT_ALL(m);
+
+        m.clear();
+
+        PRINT_ALL(m);
+    }
+}
+
+MAIN(map_test_clear)

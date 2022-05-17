@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:35:37 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 09:09:40 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:29:09 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 #define PRINT_LINE(msg, value)                                                                     \
     {                                                                                              \
-        std::cout << msg << " " << value;                                                          \
+        std::cout << msg << " " << (value);                                                        \
         PRINT_FILE_LINE();                                                                         \
     }
 
