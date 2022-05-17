@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:52:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/17 17:14:15 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/17 18:12:06 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,3 +25,4 @@ void map_test_riterator();
 void map_test_empty();
 void map_test_insert();
 void map_test_insert_hint();
+void map_test_insert_range();
