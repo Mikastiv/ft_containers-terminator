@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 19:03:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 21:59:36 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void map_test_ctor()
         intmap m;
 
         PRINT_ALL(m);
-
-        
     }
 
     // Compare/Allocator
@@ -29,8 +27,6 @@ void map_test_ctor()
         strmap m(std::less<std::string>(), alloc);
 
         PRINT_ALL(m);
-
-        
     }
 }
 

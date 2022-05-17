@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:32:59 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 19:51:37 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:06:58 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Wrong out of range exception " << 38;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Wrong out of range exception", 38);
         }
         CATCH_UNHANDLED_EX();
     }
@@ -39,8 +38,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Uut of range exception " << 99;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Out of range exception", 99);
         }
         CATCH_UNHANDLED_EX();
     }
@@ -53,8 +51,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Uut of range exception " << 0;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Out of range exception", 0);
         }
         CATCH_UNHANDLED_EX();
     }
@@ -67,8 +64,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Wrong out of range exception " << 38;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Wrong out of range exception", 38);
         }
         CATCH_UNHANDLED_EX();
     }
@@ -81,8 +77,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Uut of range exception " << 99;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Out of range exception", 99);
         }
         CATCH_UNHANDLED_EX();
     }
@@ -95,8 +90,7 @@ void vec_test_at()
 
             PRINT_LINE("At:", c);
         } catch (std::out_of_range& e) {
-            std::cout << "Uut of range exception " << 0;
-            PRINT_FILE_LINE();
+            PRINT_LINE("Out of range exception", 0);
         }
         CATCH_UNHANDLED_EX();
     }

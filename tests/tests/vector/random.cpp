@@ -6,11 +6,12 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:59:02 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/16 22:14:43 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
+#include <stdexcept>
 
 void vec_test_random()
 {
@@ -100,6 +101,13 @@ void vec_test_random()
         }
 
         v2.reserve(64);
+
+        try {
+            PRINT_LINE("At:", v2.at(26));
+        } catch (std::out_of_range& e) {
+            PRINT_LINE("Out of range:", 26);
+        }
+        CATCH_UNHANDLED_EX();
 
         CHECK_AND_PRINT_ALL(v2);
 
