@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:04:03 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/18 00:19:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:46:06 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void map_test_erase()
 
         it = m.begin();
 
-        increment_iter(it, 21);
+        std::advance(it, 21);
 
         m.erase(it);
 
@@ -35,7 +35,7 @@ void map_test_erase()
 
         it = m.end();
 
-        decrement_iter(it, 10);
+        std::advance(it, -10);
 
         m.erase(it);
 
@@ -43,7 +43,7 @@ void map_test_erase()
 
         it = m.end();
 
-        decrement_iter(it, 3);
+        std::advance(it, -3);
 
         m.erase(it);
 
@@ -51,7 +51,7 @@ void map_test_erase()
 
         it = m.end();
 
-        decrement_iter(it, 1);
+        std::advance(it, -1);
 
         m.erase(it);
 
@@ -59,7 +59,7 @@ void map_test_erase()
 
         it = m.begin();
 
-        increment_iter(it, 1);
+        std::advance(it, 1);
 
         m.erase(it);
 

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:49:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/18 00:11:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:36:25 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,19 +133,3 @@ typedef NAMESPACE::map<int, std::string, std::less<int>,
 typedef NAMESPACE::map<std::string, std::string, std::less<std::string>,
                        track_allocator<NAMESPACE::pair<const std::string, std::string> > >
     strmap;
-
-template <typename It>
-void increment_iter(It& it, std::size_t count)
-{
-    for (std::size_t i = 0; i < count; ++i) {
-        ++it;
-    }
-}
-
-template <typename It>
-void decrement_iter(It& it, std::size_t count)
-{
-    for (std::size_t i = 0; i < count; ++i) {
-        --it;
-    }
-}

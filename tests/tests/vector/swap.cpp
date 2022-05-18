@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 19:58:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:30:10 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void vec_test_swap()
         CHECK_AND_PRINT_ALL(v1);
         CHECK_AND_PRINT_ALL(v2);
 
-        std::swap(v1, v2);
+        NAMESPACE::swap(v1, v2);
 
         CHECK_AND_PRINT_ALL(v1);
         CHECK_AND_PRINT_ALL(v2);
@@ -40,7 +40,7 @@ void vec_test_swap()
 
         v1.resize(0);
 
-        std::swap(v1, v2);
+        NAMESPACE::swap(v1, v2);
 
         CHECK_AND_PRINT_ALL(v1);
         CHECK_AND_PRINT_ALL(v2);
