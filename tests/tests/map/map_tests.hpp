@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:52:47 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/18 17:24:53 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:36:04 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,5 @@ void map_test_find();
 void map_test_equal_range();
 void map_test_lower_bound();
 void map_test_upper_bound();
+void map_test_key_comp();
+void map_test_value_comp();
