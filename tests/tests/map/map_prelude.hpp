@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:49:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/18 14:36:25 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/18 17:12:50 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,3 +133,20 @@ typedef NAMESPACE::map<int, std::string, std::less<int>,
 typedef NAMESPACE::map<std::string, std::string, std::less<std::string>,
                        track_allocator<NAMESPACE::pair<const std::string, std::string> > >
     strmap;
+
+#define PRINT_BOUND(b, end)                                                                        \
+    {                                                                                              \
+        if (b != end) {                                                                            \
+            PRINT_PAIR_REF(*b);                                                                    \
+        } else {                                                                                   \
+            PRINT_MSG("End iterator");                                                             \
+        }                                                                                          \
+        std::cout << std::endl;                                                                    \
+    }
+
+#define PRINT_EQ_RANGE(p, end)                                                                     \
+    {                                                                                              \
+        std::cout << "--------------------------------\n";                                         \
+        PRINT_BOUND(p.first, end);                                                                 \
+        PRINT_BOUND(p.second, end);                                                                \
+    }
