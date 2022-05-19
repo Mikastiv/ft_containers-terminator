@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:45:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 15:16:38 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/19 16:23:17 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,16 @@ void map_test_random()
 
         PRINT_ALL(m);
         PRINT_ALL(n);
+
+        PRINT_EQ_RANGE(m.equal_range("abcd"), m.end());
+        PRINT_BOUND(m.lower_bound("123"), m.end());
+        PRINT_BOUND(m.upper_bound("jhg456"), m.end());
+
+        PRINT_LINE("Find:", m.find("hello") != m.end() ? m.find("hello")->first : "End");
+
+        m["hello"] = "world";
+
+        PRINT_LINE("Find:", m.find("hello") != m.end() ? m.find("hello")->first : "End");
     }
 
     {
@@ -87,9 +97,7 @@ void map_test_random()
 
         PRINT_ALL(m);
 
-        while (m.begin() != m.end()) {
-            m.erase(m.begin());
-        }
+        m.erase(m.begin(), m.end());
 
         PRINT_ALL(m);
     }
