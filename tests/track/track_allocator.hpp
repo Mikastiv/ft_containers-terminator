@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 17:31:18 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/15 03:37:25 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/20 19:33:57 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ public:
         switch (result) {
             case DEALLOC_BAD_POINTER:
                 std::cout << "Called deallocate on non-allocated address: " << p << std::endl;
-                return;
+                break;
             case DEALLOC_BAD_SIZE:
                 std::cout << "Called deallocate with wrong block size: " << n << " (expected "
                           << tracker.block_size(p) << ")" << std::endl;
