@@ -1,7 +1,5 @@
 #!/bin/sh
 
-FT_CONTAINERS="../../ft_containers"
-
 # ANSI Colors
 RED="\033[31;1m"
 GREEN="\033[32;1m"
