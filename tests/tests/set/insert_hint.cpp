@@ -5,43 +5,43 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 17:14:19 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:23:42 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/19 23:22:54 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/19 23:23:39 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_prelude.hpp"
+#include "set_prelude.hpp"
 
-void map_test_insert_hint()
+void set_test_insert_hint()
 {
     SETUP_ARRAYS();
 
     {
-        intmap m;
+        intset m;
 
-        intmap::iterator it = m.insert(m.end(), NAMESPACE::make_pair(64, "Gamepak"));
+        intset::iterator it = m.insert(m.end(), 64);
 
-        PRINT_PAIR_REF(*it);
+        PRINT_LINE("It:", *it);
 
-        it = m.insert(m.end(), NAMESPACE::make_pair(64, "Test"));
+        it = m.insert(m.end(), 64);
 
-        PRINT_PAIR_REF(*it);
+        PRINT_LINE("It:", *it);
 
-        it = m.insert(m.end(), NAMESPACE::make_pair(100, "100$"));
+        it = m.insert(m.end(), 100);
 
-        PRINT_PAIR_REF(*it);
+        PRINT_LINE("It:", *it);
 
         it = m.end();
         --it;
 
-        it = m.insert(it, NAMESPACE::make_pair(100, "12345"));
+        it = m.insert(it, 100);
 
-        PRINT_PAIR_REF(*it);
+        PRINT_LINE("It:", *it);
 
-        it = m.insert(it, NAMESPACE::make_pair(69, "420"));
+        it = m.insert(it, 69);
 
-        PRINT_PAIR_REF(*it);
+        PRINT_LINE("It:", *it);
     }
 }
 
-MAIN(map_test_insert_hint)
+MAIN(set_test_insert_hint)

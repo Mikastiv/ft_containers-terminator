@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 00:23:39 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:57:58 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/19 23:57:47 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/19 23:58:42 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "map_prelude.hpp"
+#include "set_prelude.hpp"
 
-void map_test_comparisons_ge()
+void set_test_comparisons_ge()
 {
     SETUP_ARRAYS();
 
     {
-        intmap m;
-        intmap n;
+        intset m;
+        intset n;
 
         if (m > n) {
             PRINT_MSG("Greater");
@@ -26,8 +26,8 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + 1);
-        intmap n;
+        intset m(intstr_arr, intstr_arr + 1);
+        intset n;
 
         if (m > n) {
             PRINT_MSG("Greater.");
@@ -35,8 +35,8 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + 1);
-        intmap n;
+        intset m(intstr_arr, intstr_arr + 1);
+        intset n;
 
         if (n > m) {
             PRINT_MSG("Greater..");
@@ -44,8 +44,8 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + 1);
-        intmap n(intstr_arr, intstr_arr + 1);
+        intset m(intstr_arr, intstr_arr + 1);
+        intset n(intstr_arr, intstr_arr + 1);
 
         if (n > m) {
             PRINT_MSG("Greater...");
@@ -53,8 +53,8 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + intstr_size);
-        intmap n(intstr_arr, intstr_arr + intstr_size);
+        intset m(intstr_arr, intstr_arr + intstr_size);
+        intset n(intstr_arr, intstr_arr + intstr_size);
 
         if (n > m) {
             PRINT_MSG("Greater....");
@@ -62,14 +62,14 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + 5);
-        intmap n;
+        intset m(intstr_arr, intstr_arr + 5);
+        intset n;
 
-        n.insert(NAMESPACE::make_pair(5, "Hello"));
-        n.insert(NAMESPACE::make_pair(7, "Hello"));
-        n.insert(NAMESPACE::make_pair(8, "Hello"));
-        n.insert(NAMESPACE::make_pair(1, "Hello"));
-        n.insert(NAMESPACE::make_pair(0, "Hello"));
+        n.insert(5);
+        n.insert(7);
+        n.insert(8);
+        n.insert(1);
+        n.insert(0);
 
         if (n > m) {
             PRINT_MSG("Greater.....");
@@ -77,10 +77,10 @@ void map_test_comparisons_ge()
     }
 
     {
-        intmap m(intstr_arr, intstr_arr + 5);
-        intmap n(intstr_arr, intstr_arr + 4);
+        intset m(intstr_arr, intstr_arr + 5);
+        intset n(intstr_arr, intstr_arr + 4);
 
-        n.insert(NAMESPACE::make_pair(5, "Hello"));
+        n.insert(5);
 
         if (n > m) {
             PRINT_MSG("Greater......");
@@ -88,4 +88,4 @@ void map_test_comparisons_ge()
     }
 }
 
-MAIN(map_test_comparisons_ge)
+MAIN(set_test_comparisons_ge)
