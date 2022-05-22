@@ -1,0 +1,8 @@
+-Wall
+-Wextra
+-Werror
+-Wpedantic
+-Wsign-conversion
+-std=c++98
+-I.
+-I../../ft_containers
