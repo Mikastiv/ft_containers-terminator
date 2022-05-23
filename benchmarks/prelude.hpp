@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:25:27 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 15:07:33 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 15:42:10 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,12 @@
             x = x + 64;                                                                            \
         }                                                                                          \
     }
+
+template <typename ForwardIt, typename T>
+void iota(ForwardIt first, ForwardIt last, T value = T())
+{
+    while (first != last) {
+        *first++ = value;
+        ++value;
+    }
+}

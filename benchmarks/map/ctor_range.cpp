@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:16:58 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:37:05 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 16:10:52 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 
     for (int i = 0; i < 5; ++ i) {
         NAMESPACE::map<int, int> m(data.begin(), data.begin() + 2500000);
-        BLOCK_OPTIMIZATION(m);
+        // BLOCK_OPTIMIZATION(m);
     }
 
     PRINT_TIME(t);
