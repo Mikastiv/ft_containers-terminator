@@ -25,20 +25,21 @@ print_msg() {
 }
 
 do_benchmark() {
-    if $CXX $CXXFLAGS -DNAMESPACE=ft $3; then
+    if $CXX $CXXFLAGS -DNAMESPACE=ft $3 timer/timer.cpp; then
         print_msg "ft::$1 $2:"
-        time ./a.out
+        ./a.out
     else
         print_err "error compiling $3"
         return
     fi
 
-    if ! $CXX $CXXFLAGS -DNAMESPACE=std $3; then
+    if ! $CXX $CXXFLAGS -DNAMESPACE=std $3 timer/timer.cpp; then
         print_err "warning: std test failed to compile"
     fi
 
-    print_msg "\nstd::$1 $2:"
-    time ./a.out
+    print_msg "std::$1 $2:"
+    ./a.out
+    print_msg "-------------------------------"
 }
 
 benchmark_container() {

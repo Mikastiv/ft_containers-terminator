@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insert.cpp                                         :+:      :+:    :+:   */
+/*   insert_range.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 18:20:12 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 13:15:45 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 12:30:38 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 13:15:19 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,29 @@ int main()
 {
     SETUP;
 
+    NAMESPACE::vector<int> data;
+
+    for (std::size_t i = 0; i < MAXSIZE; ++i) {
+        data.push_back(rand());
+    }
+
     timer t;
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 10; ++i) {
         NAMESPACE::vector<int> v;
 
-        for (std::size_t i = 0; i < MAXSIZE / 2; ++i) {
-            v.insert(v.end(), rand());
-        }
+        v.insert(v.begin(), data.begin(), data.end());
+
         BLOCK_OPTIMIZATION(v);
     }
 
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < 10; ++i) {
         NAMESPACE::vector<int> v;
 
-        for (std::size_t i = 0; i < 200000; ++i) {
-            v.insert(v.begin(), rand());
-        }
+        v.insert(v.begin(), data.begin(), data.begin() + 1000000);
+        v.insert(v.begin() + 60000, data.begin(), data.begin() + 1000000);
+
         BLOCK_OPTIMIZATION(v);
     }
 
-    for (int i = 0; i < 2; ++i) {
-        NAMESPACE::vector<int> v;
-
-        for (std::size_t i = 0; i < 5000; ++i) {
-            v.insert(v.end(), rand());
-        }
-        for (std::size_t i = 0; i < 200000; ++i) {
-            v.insert(v.begin() + 450, rand());
-        }
-        BLOCK_OPTIMIZATION(v);
-    }
     PRINT_TIME(t);
 }
