@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignment.cpp                                     :+:      :+:    :+:   */
+/*   ctor_copy.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 14:38:01 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 14:41:37 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "map_prelude.hpp"
 
 int main()
 {
     SETUP;
 
-    NAMESPACE::vector<int> data;
+    NAMESPACE::map<int, int> data;
 
-    for (std::size_t i = 0; i < MAXSIZE; ++i) {
-        data.push_back(rand());
+    for (std::size_t i = 0; i < MAXSIZE / 2; ++i) {
+        data.insert(NAMESPACE::make_pair(rand(), rand()));
     }
 
     timer t;
 
-    {
-        NAMESPACE::vector<int> v = data;
-        for (int i = 0; i < 10; ++i) {
-            v = data;
-            BLOCK_OPTIMIZATION(v);
-        }
-    }
-
-    for (int i = 0; i < 10; ++i) {
-        NAMESPACE::vector<int> v;
-        v = data;
-        BLOCK_OPTIMIZATION(v);
+    for (int i = 0; i < 5; ++i) {
+        NAMESPACE::map<int, int> m(data);
+        BLOCK_OPTIMIZATION(m);
     }
 
     PRINT_TIME(t);

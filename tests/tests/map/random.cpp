@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 19:45:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 16:23:17 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 14:50:08 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void map_test_random()
     {
         NAMESPACE::map<int, int, std::less<int>, track_allocator<NAMESPACE::pair<const int, int> > > m;
 
-        for (int i = 0; i < 15000; ++i) {
+        for (int i = 0; i < 50000; ++i) {
             m.insert(NAMESPACE::make_pair(rand(), rand()));
         }
 

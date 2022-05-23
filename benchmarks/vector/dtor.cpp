@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignment.cpp                                     :+:      :+:    :+:   */
+/*   dtor.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 14:42:43 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 15:00:00 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,15 @@ int main()
         data.push_back(rand());
     }
 
+    long sum = 0;
     timer t;
 
-    {
-        NAMESPACE::vector<int> v = data;
-        for (int i = 0; i < 10; ++i) {
-            v = data;
-            BLOCK_OPTIMIZATION(v);
-        }
-    }
-
-    for (int i = 0; i < 10; ++i) {
-        NAMESPACE::vector<int> v;
-        v = data;
+    for (int i = 0; i < 5; ++i) {
+        sum += t.get_time();
+        NAMESPACE::vector<int> v(data.begin(), data.end());
         BLOCK_OPTIMIZATION(v);
+        t.reset();
     }
 
-    PRINT_TIME(t);
+    std::cout << sum << "ms" << std::endl;
 }

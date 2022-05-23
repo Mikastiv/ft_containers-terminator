@@ -11,14 +11,27 @@ Run every tests: <br/>
 ```sh run_tests.sh```
 
 Run one or more container tests: <br/>
-```sh run_files.sh <CONTAINER_1> ... <CONTAINER_N>```
+```sh run_tests.sh <CONTAINER_1> ... <CONTAINER_N>```
 <br/>Example: <br/>
 ```sh run_tests.sh vector stack ...```
 
 Run individual tests: <br/>
-```sh run_files.sh <CONTAINER> <TEST_1> ... <TEST_N>```
+```sh run_test_files.sh <CONTAINER> <TEST_1> ... <TEST_N>```
 <br/>Example: <br/>
-```sh run_files.sh vector erase clear ...```
+```sh run_test_files.sh vector erase clear ...```
+
+Run every benchmark: <br/>
+```sh run_benchmarks.sh```
+
+Run one or more container benchmarks: <br/>
+```sh run_benchmarks.sh <CONTAINER_1> ... <CONTAINER_N>```
+<br/>Example: <br/>
+```sh run_benchmarks.sh vector map ...```
+
+Run individual benchmarks: <br/>
+```sh run_benchmark_files.sh <CONTAINER> <BENCHMARK_1> ... <BENCHMARK_N>```
+<br/>Example: <br/>
+```sh run_benchmark_files.sh vector erase insert ...```
 
 ## Summary
 

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignment.cpp                                     :+:      :+:    :+:   */
+/*   clear.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 15:05:04 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 15:05:47 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,10 @@ int main()
 
     timer t;
 
-    {
-        NAMESPACE::vector<int> v = data;
-        for (int i = 0; i < 10; ++i) {
-            v = data;
-            BLOCK_OPTIMIZATION(v);
-        }
-    }
-
     for (int i = 0; i < 10; ++i) {
-        NAMESPACE::vector<int> v;
-        v = data;
+        NAMESPACE::vector<int> v(data.begin(), data.end());
         BLOCK_OPTIMIZATION(v);
+        v.clear();
     }
 
     PRINT_TIME(t);

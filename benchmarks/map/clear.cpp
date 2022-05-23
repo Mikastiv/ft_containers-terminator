@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignment.cpp                                     :+:      :+:    :+:   */
+/*   clear.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 15:06:13 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 15:06:26 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "map_prelude.hpp"
 
 int main()
 {
     SETUP;
 
-    NAMESPACE::vector<int> data;
+    NAMESPACE::vector<NAMESPACE::pair<int, int> > data;
 
     for (std::size_t i = 0; i < MAXSIZE; ++i) {
-        data.push_back(rand());
+        data.push_back(NAMESPACE::make_pair(rand(), rand()));
     }
 
     timer t;
 
-    {
-        NAMESPACE::vector<int> v = data;
-        for (int i = 0; i < 10; ++i) {
-            v = data;
-            BLOCK_OPTIMIZATION(v);
-        }
-    }
-
-    for (int i = 0; i < 10; ++i) {
-        NAMESPACE::vector<int> v;
-        v = data;
-        BLOCK_OPTIMIZATION(v);
+    for (int i = 0; i < 5; ++ i) {
+        NAMESPACE::map<int, int> m(data.begin(), data.begin() + 2500000);
+        BLOCK_OPTIMIZATION(m);
+        m.clear();
     }
 
     PRINT_TIME(t);

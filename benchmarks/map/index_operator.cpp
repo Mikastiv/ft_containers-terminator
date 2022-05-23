@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   assignment.cpp                                     :+:      :+:    :+:   */
+/*   index_operator.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 15:02:02 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 15:04:35 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "map_prelude.hpp"
 
 int main()
 {
     SETUP;
 
-    NAMESPACE::vector<int> data;
-
-    for (std::size_t i = 0; i < MAXSIZE; ++i) {
-        data.push_back(rand());
-    }
-
     timer t;
 
-    {
-        NAMESPACE::vector<int> v = data;
-        for (int i = 0; i < 10; ++i) {
-            v = data;
-            BLOCK_OPTIMIZATION(v);
-        }
-    }
-
-    for (int i = 0; i < 10; ++i) {
-        NAMESPACE::vector<int> v;
-        v = data;
-        BLOCK_OPTIMIZATION(v);
+    NAMESPACE::map<int, int> m;
+    for (std::size_t i = 0; i < MAXSIZE / 2; ++i) {
+        m[rand()] = rand();
     }
 
     PRINT_TIME(t);
