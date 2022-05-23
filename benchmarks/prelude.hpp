@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:25:27 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 15:42:10 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:39:15 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,17 @@
         std::cout << t.get_time() << "ms" << std::endl;                                            \
     }
 
+#define PRINT_SUM()                                                                                \
+    {                                                                                              \
+        std::cout << sum << "ms" << std::endl;                                                     \
+    }
+
 #define SETUP                                                                                      \
     srand(64);                                                                                     \
     volatile int x = 0;                                                                            \
-    (void)x;
+    (void)x;                                                                                       \
+    long sum = 0;                                                                                  \
+    (void)sum;
 
 #define BLOCK_OPTIMIZATION(v)                                                                      \
     {                                                                                              \

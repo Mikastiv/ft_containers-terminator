@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 13:29:32 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 14:52:26 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:37:29 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main()
 
     {
         NAMESPACE::vector<int> v = data;
+
+        t.reset();
         for (int i = 0; i < 10; ++i) {
             v = data;
             BLOCK_OPTIMIZATION(v);

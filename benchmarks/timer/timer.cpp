@@ -6,11 +6,12 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:49:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 13:22:34 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:35:32 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "timer.hpp"
+#include <cstdlib>
 
 timer::timer()
 {

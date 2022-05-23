@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:42:43 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 15:00:00 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 19:39:31 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int main()
         data.push_back(rand());
     }
 
-    long sum = 0;
     timer t;
 
     for (int i = 0; i < 5; ++i) {
@@ -32,5 +31,5 @@ int main()
         t.reset();
     }
 
-    std::cout << sum << "ms" << std::endl;
+    PRINT_SUM();
 }
