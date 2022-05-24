@@ -29,6 +29,7 @@ public:
     typedef const T&       const_reference;
     typedef std::size_t    size_type;
     typedef std::ptrdiff_t difference_type;
+
     // clang-format on
 
     template <typename U>
@@ -37,14 +38,22 @@ public:
     };
 
 public:
-    track_allocator() {}
+    track_allocator()
+    {
+    }
 
-    track_allocator(const track_allocator&) {}
+    track_allocator(const track_allocator&)
+    {
+    }
 
     template <typename U>
-    track_allocator(const track_allocator<U>&) {}
+    track_allocator(const track_allocator<U>&)
+    {
+    }
 
-    ~track_allocator() {}
+    ~track_allocator()
+    {
+    }
 
 public:
     bool operator==(const track_allocator&)
@@ -91,8 +100,7 @@ public:
                 std::cout << "Called deallocate with wrong block size: " << n << " (expected "
                           << tracker.block_size(p) << ")" << std::endl;
                 break;
-            default:
-                ;
+            default:;
         }
         std::allocator<T>().deallocate(p, n);
     }

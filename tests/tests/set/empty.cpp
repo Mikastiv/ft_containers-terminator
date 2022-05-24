@@ -31,7 +31,7 @@ void set_test_empty()
     }
 
     {
-        intset m (int_arr, int_arr + int_size);
+        intset m(int_arr, int_arr + int_size);
 
         PRINT_LINE("Empty:", m.empty() ? "true" : "false");
     }

@@ -31,7 +31,7 @@ void map_test_empty()
     }
 
     {
-        intmap m (intstr_arr, intstr_arr + intstr_size);
+        intmap m(intstr_arr, intstr_arr + intstr_size);
 
         PRINT_LINE("Empty:", m.empty() ? "true" : "false");
     }

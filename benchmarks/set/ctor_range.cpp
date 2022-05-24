@@ -24,7 +24,7 @@ int main()
 
     timer t;
 
-    for (int i = 0; i < 5; ++ i) {
+    for (int i = 0; i < 5; ++i) {
         NAMESPACE::set<int> s(data.begin(), data.begin() + 2500000);
     }
 

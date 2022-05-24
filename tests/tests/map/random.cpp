@@ -89,7 +89,8 @@ void map_test_random()
     }
 
     {
-        NAMESPACE::map<int, int, std::less<int>, track_allocator<NAMESPACE::pair<const int, int> > > m;
+        NAMESPACE::map<int, int, std::less<int>, track_allocator<NAMESPACE::pair<const int, int> > >
+            m;
 
         for (int i = 0; i < 50000; ++i) {
             m.insert(NAMESPACE::make_pair(rand(), rand()));

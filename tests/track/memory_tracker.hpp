@@ -16,8 +16,7 @@
 #include <map>
 #include <set>
 
-enum dealloc_result
-{
+enum dealloc_result {
     DEALLOC_BAD_POINTER,
     DEALLOC_BAD_SIZE,
     DEALLOC_SUCCESS

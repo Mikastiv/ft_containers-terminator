@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "stack_prelude.hpp"
 
 void stack_test_comparisons_ne()

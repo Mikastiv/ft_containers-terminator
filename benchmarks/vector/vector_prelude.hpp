@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include <vector>
 #include "vector.hpp"
+#include <vector>
 
 #include "prelude.hpp"
 

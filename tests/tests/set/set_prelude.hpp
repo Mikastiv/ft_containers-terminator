@@ -51,10 +51,10 @@ void init_array(T* arr, std::size_t size)
 
 #define SETUP_ARRAYS()                                                                             \
     SETUP_ARRAY(int, int_arr, 64);                                                                 \
-    std::size_t int_size = 64;                                                                  \
-    std::size_t str_size = 32;                                                                  \
-    (void)int_size;                                                                             \
-    (void)str_size;                                                                             \
+    std::size_t int_size = 64;                                                                     \
+    std::size_t str_size = 32;                                                                     \
+    (void)int_size;                                                                                \
+    (void)str_size;                                                                                \
     std::string str_arr[32] = {                                                                    \
         "QExoqp0nICr0sXsHqty2", "naax9QcpJhvaL7DezsNQ", "25ZTtB6wbptfbxM8AvHB",                    \
         "tShYNtc0MkdjqLrOatgz", "7Z3kf1Qec0NnsLSEpbOt", "WhkSNrKJC966fvjZ2Or1",                    \
