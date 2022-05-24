@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 20:07:57 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/13 17:21:06 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:55:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void stack_test_misc()
 
         PRINT_LINE("Size:", st.size());
         PRINT_LINE("Empty:", (st.empty() ? "true" : "false"));
-        PRINT_LINE("Top:", st.top());
 
         st = st1;
 
