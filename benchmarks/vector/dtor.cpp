@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 14:42:43 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 20:35:19 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/23 23:05:50 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main()
 
     timer t;
 
-    for (int i = 0; i < 500000; ++i) {
+    for (int i = 0; i < 100; ++i) {
         sum += t.get_time();
         NAMESPACE::vector<int> v(data.begin(), data.end());
         BLOCK_OPTIMIZATION(v);
