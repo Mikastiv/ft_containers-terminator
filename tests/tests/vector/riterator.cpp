@@ -6,22 +6,12 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:32:20 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/14 19:51:13 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:31:30 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector_prelude.hpp"
 #include <algorithm>
-
-long times2(const long& x)
-{
-    return x * 2;
-}
-
-void print(const long& x)
-{
-    std::cout << x << '\n';
-}
 
 void vec_test_riterator()
 {
@@ -159,7 +149,9 @@ void vec_test_riterator()
     {
         longvector v(b_long, b_long + b_size);
 
-        std::transform(v.rbegin(), v.rend() - 10, v.rbegin(), &times2);
+        long (*fn)(const long&) = &times2;
+
+        std::transform(v.rbegin(), v.rend() - 10, v.rbegin(), fn);
 
         CHECK_AND_PRINT_ALL(v);
 
@@ -171,7 +163,9 @@ void vec_test_riterator()
     {
         const longvector v(b_long, b_long + b_size);
 
-        std::for_each(v.rbegin(), v.rend(), &print);
+        void (*fn)(const long&) = &print;
+
+        std::for_each(v.rbegin(), v.rend(), fn);
     }
 
     {

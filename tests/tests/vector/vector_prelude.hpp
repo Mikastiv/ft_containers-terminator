@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:39:36 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/17 13:44:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:31:36 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,3 +115,15 @@ typedef NAMESPACE::vector<int, track_allocator<int> > intvector;
 typedef NAMESPACE::vector<long, track_allocator<long> > longvector;
 typedef NAMESPACE::vector<double, track_allocator<double> > doublevector;
 typedef NAMESPACE::vector<char, track_allocator<char> > charvector;
+
+template <typename T>
+T times2(const T& x)
+{
+    return x * 2;
+}
+
+template <typename T>
+void print(const T& x)
+{
+    std::cout << x << '\n';
+}

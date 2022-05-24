@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:49:46 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/18 17:12:50 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 13:27:12 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void print_map(It first, It last)
         PRINT_LINE("Value:", (p).second);                                                          \
     }
 
+template <typename T>
 void init_array_int_str(NAMESPACE::pair<int, std::string>* arr, std::size_t size)
 {
     std::string x[64] = { "CBCId4lUU6oYms60JkNr", "V5sbXjlqYRAV1C1LgJbt", "TPcK94z2htaoK5hWpR1j",
@@ -84,6 +85,7 @@ void init_array_int_str(NAMESPACE::pair<int, std::string>* arr, std::size_t size
     }
 }
 
+template <typename T>
 void init_array_str_str(NAMESPACE::pair<std::string, std::string>* arr, std::size_t size)
 {
     std::string x[32] = { "RxWAUMME3GtF9Zbv3a4M", "WC96vs7Z6I6TfdGxObUg", "2beuhrfBZvjdkmfqV9yn",
@@ -117,9 +119,9 @@ void init_array_str_str(NAMESPACE::pair<std::string, std::string>* arr, std::siz
 
 #define SETUP_ARRAYS()                                                                             \
     NAMESPACE::pair<int, std::string> intstr_arr[64];                                              \
-    init_array_int_str(intstr_arr, 64);                                                            \
+    init_array_int_str<void>(intstr_arr, 64);                                                      \
     NAMESPACE::pair<std::string, std::string> strstr_arr[32];                                      \
-    init_array_str_str(strstr_arr, 32);                                                            \
+    init_array_str_str<void>(strstr_arr, 32);                                                      \
     std::size_t intstr_size = 64;                                                                  \
     std::size_t strstr_size = 32;                                                                  \
     (void)intstr_arr;                                                                              \

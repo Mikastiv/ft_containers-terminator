@@ -122,3 +122,13 @@ run_test_files() {
 
     test_files $1 ${@:2}
 }
+
+single_binary() {
+    VEC_FILES=$(find "$TEST_DIR/vector" -type f -name '*.cpp' | sort)
+    STACK_FILES=$(find "$TEST_DIR/stack" -type f -name '*.cpp' | sort)
+    MAP_FILES=$(find "$TEST_DIR/map" -type f -name '*.cpp' | sort)
+    SET_FILES=$(find "$TEST_DIR/set" -type f -name '*.cpp' | sort)
+
+    $CXX $CXXFLAGS -DNAMESPACE=ft -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o ft.out
+    $CXX $CXXFLAGS -DNAMESPACE=std -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o std.out
+}
