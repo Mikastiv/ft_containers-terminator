@@ -13,7 +13,7 @@ void set_test_erase_key()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 16);
+        intset m(int_arr, int_arr + 16);
 
         intset::size_type size = m.erase(64);
 

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:26:57 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:27:09 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void set_test_erase_range()
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr, strstr_arr + strstr_size);
+        m.insert(str_arr, str_arr + str_size);
 
         m.erase(m.begin(), m.end());
 
@@ -31,7 +31,7 @@ void set_test_erase_range()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + intstr_size);
+        intset m(int_arr, int_arr + int_size);
 
         intset::iterator it(m.begin());
         intset::iterator end(it);

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:17:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:18:02 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void set_test_riterator()
     }
 
     {
-        strset m(strstr_arr, strstr_arr + strstr_size);
+        strset m(str_arr, str_arr + str_size);
 
         strset::reverse_iterator it = m.rbegin();
         strset::reverse_iterator it2 = m.rbegin();
@@ -86,7 +86,7 @@ void set_test_riterator()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + intstr_size);
+        intset m(int_arr, int_arr + int_size);
 
         intset::reverse_iterator it = m.rbegin();
         intset::reverse_iterator it2 = m.rbegin();

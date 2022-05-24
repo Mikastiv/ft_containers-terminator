@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:24:41 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:24:52 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:51:57 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void set_test_erase()
     SETUP_ARRAYS();
 
     {
-        intset m(intstr_arr, intstr_arr + 25);
+        intset m(int_arr, int_arr + 25);
 
         intset::iterator it = m.begin();
 

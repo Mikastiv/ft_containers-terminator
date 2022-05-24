@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:35:11 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:38:08 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void set_test_find()
     SETUP_ARRAYS();
 
     {
-        strset m(strstr_arr, strstr_arr + strstr_size);
+        strset m(str_arr, str_arr + str_size);
 
         strset::iterator it = m.find("ABCD");
 

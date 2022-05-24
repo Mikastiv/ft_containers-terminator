@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 20:49:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:15:58 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ void init_array(T* arr, std::size_t size)
     init_array(name, size);
 
 #define SETUP_ARRAYS()                                                                             \
-    SETUP_ARRAY(int, intstr_arr, 64);                                                              \
-    std::size_t intstr_size = 64;                                                                  \
-    std::size_t strstr_size = 32;                                                                  \
-    (void)intstr_size;                                                                             \
-    (void)strstr_size;                                                                             \
-    std::string strstr_arr[32] = {                                                                 \
+    SETUP_ARRAY(int, int_arr, 64);                                                                 \
+    std::size_t int_size = 64;                                                                  \
+    std::size_t str_size = 32;                                                                  \
+    (void)int_size;                                                                             \
+    (void)str_size;                                                                             \
+    std::string str_arr[32] = {                                                                    \
         "QExoqp0nICr0sXsHqty2", "naax9QcpJhvaL7DezsNQ", "25ZTtB6wbptfbxM8AvHB",                    \
         "tShYNtc0MkdjqLrOatgz", "7Z3kf1Qec0NnsLSEpbOt", "WhkSNrKJC966fvjZ2Or1",                    \
         "8vlxlFRRgW7yYj4GO7dt", "5sq1aoT8zP0HaHj3nFOK", "61Dv31GYZhkgjKCErpng",                    \
@@ -68,7 +68,7 @@ void init_array(T* arr, std::size_t size)
         "477xt6l0lph9ALQdr4HX", "D9UJNe4s8YF02LhrwOdl", "dLCisBNOdE8yugntu6cj",                    \
         "YvY4aQFHgAuagn4dFLO1", "eGR6Dtv7LW75qlV5Fkik"                                             \
     };                                                                                             \
-    (void)strstr_arr;
+    (void)str_arr;
 
 typedef NAMESPACE::set<int, std::less<int>, track_allocator<int> > intset;
 typedef NAMESPACE::set<std::string, std::less<std::string>, track_allocator<std::string> > strset;

@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:05:35 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:05:55 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void set_test_assignment()
 
         PRINT_ALL(m1);
 
-        m2 = intset(intstr_arr, intstr_arr + intstr_size);
+        m2 = intset(int_arr, int_arr + int_size);
 
         PRINT_ALL(m2);
 
@@ -32,7 +32,7 @@ void set_test_assignment()
 
         PRINT_ALL(m1);
 
-        m1 = intset(intstr_arr, intstr_arr + 10);
+        m1 = intset(int_arr, int_arr + 10);
 
         PRINT_ALL(m1);
 
@@ -49,7 +49,7 @@ void set_test_assignment()
 
         PRINT_ALL(m1);
 
-        m2 = strset(strstr_arr, strstr_arr + strstr_size);
+        m2 = strset(str_arr, str_arr + str_size);
 
         PRINT_ALL(m2);
 
@@ -57,7 +57,7 @@ void set_test_assignment()
 
         PRINT_ALL(m1);
 
-        m1 = strset(strstr_arr, strstr_arr + 10);
+        m1 = strset(str_arr, str_arr + 10);
 
         PRINT_ALL(m1);
 

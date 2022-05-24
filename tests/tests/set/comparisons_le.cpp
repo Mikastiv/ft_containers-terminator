@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:56:21 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:57:03 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:54:53 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 1);
+        intset m(int_arr, int_arr + 1);
         intset n;
 
         if (m <= n) {
@@ -36,7 +36,7 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 1);
+        intset m(int_arr, int_arr + 1);
         intset n;
 
         if (n <= m) {
@@ -45,8 +45,8 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 1);
-        intset n(intstr_arr, intstr_arr + 1);
+        intset m(int_arr, int_arr + 1);
+        intset n(int_arr, int_arr + 1);
 
         if (n <= m) {
             PRINT_MSG("Less or Equal...");
@@ -54,8 +54,8 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + intstr_size);
-        intset n(intstr_arr, intstr_arr + intstr_size);
+        intset m(int_arr, int_arr + int_size);
+        intset n(int_arr, int_arr + int_size);
 
         if (n <= m) {
             PRINT_MSG("Less or Equal....");
@@ -63,7 +63,7 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 5);
+        intset m(int_arr, int_arr + 5);
         intset n;
 
         n.insert(std::numeric_limits<int>::max());
@@ -78,8 +78,8 @@ void set_test_comparisons_le()
     }
 
     {
-        intset m(intstr_arr, intstr_arr + 5);
-        intset n(intstr_arr, intstr_arr + 4);
+        intset m(int_arr, int_arr + 5);
+        intset n(int_arr, int_arr + 4);
 
         n.insert(5);
 

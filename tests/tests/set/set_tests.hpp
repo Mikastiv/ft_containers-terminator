@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 22:10:53 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/20 01:34:26 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:47:21 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,4 @@ void set_test_comparisons_le();
 void set_test_comparisons_gt();
 void set_test_comparisons_ge();
 void set_test_random();
+void set_test_compare();

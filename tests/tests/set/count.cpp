@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:33:51 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:34:34 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:54:53 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void set_test_count()
     SETUP_ARRAYS();
 
     {
-        intset m(intstr_arr, intstr_arr + intstr_size);
+        intset m(int_arr, int_arr + int_size);
 
         intset::size_type c = m.count(64);
 

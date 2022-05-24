@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:43:45 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:45:57 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:54:53 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void set_test_lower_bound()
     SETUP_ARRAYS();
 
     {
-        intset m(intstr_arr, intstr_arr + intstr_size);
+        intset m(int_arr, int_arr + int_size);
 
         m.insert(34);
         m.insert(3468);
@@ -86,7 +86,7 @@ void set_test_lower_bound()
     }
 
     {
-        intset temp(intstr_arr, intstr_arr + intstr_size);
+        intset temp(int_arr, int_arr + int_size);
 
         temp.insert(34);
         temp.insert(3468);

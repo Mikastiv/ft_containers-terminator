@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 01:33:54 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/20 01:36:37 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void set_test_random()
     SETUP_ARRAYS();
 
     {
-        strset m(strstr_arr, strstr_arr + 16);
+        strset m(str_arr, str_arr + 16);
 
         strset::iterator it = m.find("Hello");
 
@@ -28,7 +28,7 @@ void set_test_random()
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr, strstr_arr + strstr_size);
+        m.insert(str_arr, str_arr + str_size);
 
         PRINT_ALL(m);
 
@@ -59,9 +59,9 @@ void set_test_random()
         PRINT_LINE("It:", *it);
         PRINT_ALL(m);
 
-        m.insert(strstr_arr, strstr_arr + strstr_size);
+        m.insert(str_arr, str_arr + str_size);
 
-        strset n(strstr_arr, strstr_arr + 10);
+        strset n(str_arr, str_arr + 10);
 
         m.swap(n);
 

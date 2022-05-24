@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:24:03 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/19 23:24:22 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 02:55:03 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ void set_test_insert_range()
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr, strstr_arr + 5);
+        m.insert(str_arr, str_arr + 5);
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr + 5, strstr_arr + 14);
+        m.insert(str_arr + 5, str_arr + 14);
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr, strstr_arr + 9);
+        m.insert(str_arr, str_arr + 9);
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr + 26, strstr_arr + strstr_size);
+        m.insert(str_arr + 26, str_arr + str_size);
 
         PRINT_ALL(m);
 
-        m.insert(strstr_arr + 14, strstr_arr + 26);
+        m.insert(str_arr + 14, str_arr + 26);
 
         PRINT_ALL(m);
     }
@@ -47,23 +47,23 @@ void set_test_insert_range()
 
         PRINT_ALL(m);
 
-        m.insert(intstr_arr + 16, intstr_arr + 16);
+        m.insert(int_arr + 16, int_arr + 16);
 
         PRINT_ALL(m);
 
-        m.insert(intstr_arr + 1, intstr_arr + 7);
+        m.insert(int_arr + 1, int_arr + 7);
 
         PRINT_ALL(m);
 
-        m.insert(intstr_arr, intstr_arr + 1);
+        m.insert(int_arr, int_arr + 1);
 
         PRINT_ALL(m);
 
-        m.insert(intstr_arr, intstr_arr + 17);
+        m.insert(int_arr, int_arr + 17);
 
         PRINT_ALL(m);
 
-        m.insert(intstr_arr, intstr_arr + intstr_size);
+        m.insert(int_arr, int_arr + int_size);
 
         PRINT_ALL(m);
     }

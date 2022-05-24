@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear.cpp                                          :+:      :+:    :+:   */
+/*   compare.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/19 23:20:13 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 02:52:10 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/24 02:53:39 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/24 02:55:12 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "set_prelude.hpp"
+#include "map_prelude.hpp"
+#include <functional>
 
-void set_test_clear()
+void map_test_compare()
 {
     SETUP_ARRAYS();
 
     {
-        strset m;
-
-        PRINT_ALL(m);
-
-        m.clear();
-
-        PRINT_ALL(m);
-
-        m.insert(str_arr, str_arr + 16);
-
-        PRINT_ALL(m);
-
-        m.clear();
+        NAMESPACE::map<int, std::string, std::greater<int>,
+                       track_allocator<NAMESPACE::pair<const int, std::string> > >
+            m(intstr_arr, intstr_arr + intstr_size);
 
         PRINT_ALL(m);
     }
 }
 
-MAIN(set_test_clear)
+MAIN(map_test_compare)
