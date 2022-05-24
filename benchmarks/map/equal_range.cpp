@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   erase.cpp                                          :+:      :+:    :+:   */
+/*   equal_range.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 19:31:42 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 20:07:08 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 20:17:10 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 20:18:16 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map_prelude.hpp"
-#include <iterator>
 
 int main()
 {
@@ -23,23 +22,14 @@ int main()
         data.insert(NAMESPACE::make_pair(rand(), rand()));
     }
 
-    NAMESPACE::map<int, int> m(data);
-
     timer t;
-    for (int i = 0; i < 300000; ++i) {
-        m.erase(m.begin());
-    }
 
-    for (int i = 0; i < 1000000; ++i) {
-        NAMESPACE::map<int, int>::iterator it = m.begin();
-        std::advance(it, i % 2 == 0 ? 2400 : 3064);
-        m.erase(it);
-    }
-
-    for (int i = 0; i < 100000; ++i) {
-        NAMESPACE::map<int, int>::iterator it = m.end();
-        std::advance(it, i % 2 == 0 ? -1 : -364);
-        m.erase(it);
+    for (int i = 0; i < 10000000; ++i) {
+        NAMESPACE::pair<NAMESPACE::map<int, int>::iterator, NAMESPACE::map<int, int>::iterator> eq =
+            data.equal_range(rand());
+        if (eq.first != data.end()) {
+            eq.second->second = 64;
+        }
     }
 
     PRINT_TIME(t);

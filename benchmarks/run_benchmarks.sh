@@ -73,7 +73,7 @@ benchmark_files() {
 }
 
 run_container_benchmarks() {
-    CONTAINERS="vector map stack set"
+    CONTAINERS="vector map set"
 
     if [ $# -ne 0 ]; then
         CONTAINERS=$@;

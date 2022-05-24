@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 14:42:43 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 20:35:19 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 14:57:58 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 20:25:48 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "set_prelude.hpp"
 
 int main()
 {
@@ -24,10 +24,9 @@ int main()
 
     timer t;
 
-    for (int i = 0; i < 500000; ++i) {
+    for (int i = 0; i < 5; ++i) {
         sum += t.get_time();
-        NAMESPACE::vector<int> v(data.begin(), data.end());
-        BLOCK_OPTIMIZATION(v);
+        NAMESPACE::set<int> s(data.begin(), data.begin() + 2500000);
         t.reset();
     }
 

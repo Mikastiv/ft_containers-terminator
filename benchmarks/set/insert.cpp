@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dtor.cpp                                           :+:      :+:    :+:   */
+/*   insert.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/23 14:42:43 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/23 20:35:19 by mleblanc         ###   ########.fr       */
+/*   Created: 2022/05/23 15:39:13 by mleblanc          #+#    #+#             */
+/*   Updated: 2022/05/23 20:30:34 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector_prelude.hpp"
+#include "set_prelude.hpp"
 
 int main()
 {
     SETUP;
 
-    NAMESPACE::vector<int> data;
-
-    for (std::size_t i = 0; i < MAXSIZE; ++i) {
-        data.push_back(rand());
-    }
+    NAMESPACE::set<int> data;
 
     timer t;
 
-    for (int i = 0; i < 500000; ++i) {
-        sum += t.get_time();
-        NAMESPACE::vector<int> v(data.begin(), data.end());
-        BLOCK_OPTIMIZATION(v);
-        t.reset();
+    for (std::size_t i = 0; i < MAXSIZE / 2; ++i) {
+        data.insert(rand());
     }
 
-    PRINT_SUM();
+    PRINT_TIME(t);
 }
