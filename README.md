@@ -63,3 +63,7 @@ struct object
 ```
 
 A vector of the struct object ```(ft::vector<object>)``` would leak memory everytime the destructor isn't called. Thus when the tester reports N number of alive objects, consider it to be a bug. This also happens when ```Allocator::construct``` is called on already initialized memory.
+
+## Improvements/Bug fixes
+
+Issues and pull requests are welcome for improvements and bugfixes!
