@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 14:32:20 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 13:31:30 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/24 22:02:22 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,16 @@ void vec_test_riterator()
 
         CHECK_AND_PRINT_ALL(v);
 
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
+        ++it;
         ++it;
         it++;
         ++cit;
