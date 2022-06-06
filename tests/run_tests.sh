@@ -6,7 +6,7 @@ GREEN="\033[32;1m"
 RST="\033[0m"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    ECHO_FLAG="-e"
+    ECHO_FLAG=""
 else
     ECHO_FLAG="-e"
 fi
