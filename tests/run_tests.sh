@@ -6,7 +6,7 @@ GREEN="\033[32;1m"
 RST="\033[0m"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    ECHO_FLAG=""
+    ECHO_FLAG="-e"
 else
     ECHO_FLAG="-e"
 fi
@@ -32,6 +32,10 @@ test_fail() {
 # Print red text
 print_err() {
     echo $ECHO_FLAG $RED$1$RST
+}
+
+debug_test() {
+    $CXX $CXXFLAGS -g -fno-limit-debug-info -DNAMESPACE=ft -o ../debug.out $3 track/memory_tracker.cpp track/leak_checker.cpp
 }
 
 do_test() {
@@ -121,6 +125,19 @@ run_test_files() {
     mkdir -p $LOGS $DIFFS
 
     test_files $1 ${@:2}
+}
+
+debug_file() {
+    TEST=${@:2}
+
+    TEST_NAME=$TEST
+    TEST_FILE="tests/$1/$TEST_NAME.cpp"
+
+    debug_test $1 $TEST_NAME $TEST_FILE
+}
+
+debug_test_file() {
+    debug_file $1 ${@:2}
 }
 
 single_binary() {

@@ -5,3 +5,4 @@ test
 *.diff
 *.code-workspace
 *.out
+*.dSYM
