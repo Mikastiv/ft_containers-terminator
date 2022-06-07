@@ -71,7 +71,9 @@ You can create a executable (debug.out) for debugging a particular test with: <b
 <br/>Example: <br/>
 ```sh debug_file.sh vector erase```
 
+## NOTE
 
+The leaks for map and set can only be detected if the allocator template parameter for the map/set is used in the underlying tree class, otherwise it doesn't work. Check the map/set of the evaluated implementation to be sure.
 
 ## Improvements/Bug fixes
 
