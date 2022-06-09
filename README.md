@@ -37,7 +37,7 @@ Run individual benchmarks: <br/>
 
 This tester tracks allocations/dealloctions as well as construction/destruction calls.
 
-Leaks are tracked and bad use of ```Allocator::construct/Allocator::destroy``` (Allocator is the template parameter for the container's allocator). Construct calls on initialized memory is a bug because the destructor of T will NOT be called. Also, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
+Leaks are tracked and bad use of ```Allocator::construct/Allocator::destroy``` (Allocator is the template parameter for the container's allocator). Construct calls on initialized memory is a bug because the destructor of T will NOT be called on the old value. Also, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
 
 For example, consider this struct: <br/>
 ```
