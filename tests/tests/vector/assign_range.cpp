@@ -6,7 +6,7 @@
 /*   By: mleblanc <mleblanc@student.42quebec.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 17:56:15 by mleblanc          #+#    #+#             */
-/*   Updated: 2022/05/16 10:12:14 by mleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:57:56 by mleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,22 @@ void vec_test_assign_range()
 
         v.push_back(64);
         v.assign(b_int, b_int + b_size);
+
+        CHECK_AND_PRINT_ALL(v);
+    }
+
+    {
+        intvector v(s_int, s_int + s_size);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.push_back(64);
+        v.assign(v.begin(), v.begin() + 21);
+
+        CHECK_AND_PRINT_ALL(v);
+
+        v.push_back(64);
+        v.assign(v.begin(), v.end());
 
         CHECK_AND_PRINT_ALL(v);
     }
