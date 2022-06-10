@@ -33,6 +33,13 @@ Run individual benchmarks: <br/>
 <br/>Example: <br/>
 ```sh run_benchmark_files.sh vector erase insert ...```
 
+## Debug helper
+
+You can create a executable (debug.out) for debugging a particular test with: <br/>
+```sh debug_file.sh <CONTAINER> <TEST>```
+<br/>Example: <br/>
+```sh debug_file.sh vector erase```
+
 ## Summary
 
 This tester tracks allocations/dealloctions as well as construction/destruction calls.
@@ -63,13 +70,6 @@ struct object
 ```
 
 A vector of the struct object ```(ft::vector<object>)``` would leak memory everytime the destructor isn't called. Thus when the tester reports N number of alive objects, consider it to be a bug. This also happens when ```Allocator::construct``` is called on already initialized memory.
-
-## Debug helper
-
-You can create a executable (debug.out) for debugging a particular test with: <br/>
-```sh debug_file.sh <CONTAINER> <TEST>```
-<br/>Example: <br/>
-```sh debug_file.sh vector erase```
 
 ## NOTE
 
