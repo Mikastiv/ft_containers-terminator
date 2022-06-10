@@ -36,9 +36,9 @@ Run individual benchmarks: <br/>
 ## Debug helper
 
 You can create a executable (debug.out) for debugging a particular test with: <br/>
-```sh debug_file.sh <CONTAINER> <TEST>```
+```sh debug_test.sh <CONTAINER> <TEST>```
 <br/>Example: <br/>
-```sh debug_file.sh vector erase```
+```sh debug_test.sh vector erase```
 
 ## Summary
 
