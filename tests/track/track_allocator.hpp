@@ -119,7 +119,7 @@ public:
         const bool result = tracker.add_constructor_call((void*)p);
 
         if (!result) {
-            std::cout << "Called construct on initilized memory: " << p << std::endl;
+            std::cout << "Called construct on initialized memory: " << p << std::endl;
         }
 
         std::allocator<T>().construct(p, val);
@@ -134,7 +134,7 @@ public:
         const bool result = tracker.add_destructor_call((void*)p);
 
         if (!result) {
-            std::cout << "Called destroy on uninitilized memory: " << p << std::endl;
+            std::cout << "Called destroy on uninitialized memory: " << p << std::endl;
         }
 
         std::allocator<T>().destroy(p);
