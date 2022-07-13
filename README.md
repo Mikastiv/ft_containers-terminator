@@ -73,7 +73,7 @@ A vector of the struct object ```(ft::vector<object>)``` would leak memory every
 
 ## NOTE
 
-The leaks for map and set can only be detected if the allocator template parameter for the map/set is used in the underlying tree class, otherwise it doesn't work. Check the map/set of the evaluated implementation to be sure.
+For leak detection/object tracking to work, every allocations, deallocations, contructions and destructions have to be done with the allocator passed as a template argument. This applies to every containers.
 
 ## Improvements/Bug fixes
 
