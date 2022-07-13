@@ -76,6 +76,7 @@ void vec_test_assign_range()
     }
 
     {
+        // This test checks if vector works with iterators tagged as std::input_iterator_tag
         charvector v;
 
         std::istringstream str("1 2 3 4 5 6 7");

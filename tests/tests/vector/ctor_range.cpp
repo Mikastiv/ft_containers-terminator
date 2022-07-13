@@ -44,6 +44,7 @@ void vec_test_ctor_range()
     }
 
     {
+        // This test checks if vector works with iterators tagged as std::input_iterator_tag
         std::istringstream str("");
         std::istreambuf_iterator<char> it(str), end;
 
@@ -53,6 +54,7 @@ void vec_test_ctor_range()
     }
 
     {
+        // This test checks if vector works with iterators tagged as std::input_iterator_tag
         std::istringstream str("1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ");
         std::istreambuf_iterator<char> it(str), end;
 
