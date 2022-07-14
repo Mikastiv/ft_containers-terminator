@@ -5,7 +5,8 @@ A tester for the project ft_containers at 42
 ## Usage
 
 Set the location of your containers folder in config.sh (variable FT_CONTAINERS) <br/>
-The tester expects every header files at the root of the folder assigned to FT_CONTAINERS
+The tester expects every header files at the root of the folder assigned to FT_CONTAINERS <br/>
+Every header files are expected to follow STL file names (vector -> vector.hpp, map -> map.hpp, type_traits -> type_traits.hpp, ...)
 
 Run every tests: <br/>
 ```sh run_tests.sh```
