@@ -15,6 +15,7 @@
 #include "type_traits.hpp"
 
 #include "prelude.hpp"
+#include "type_traits_impl.hpp"
 
 #define PRINT_IS_INTEGRAL(type)                                                                    \
-    std::cout << #type << " = " << ft::is_integral<type>::value << std::endl;
+    std::cout << #type << " = " << SFINAE::is_integral<type>::value << std::endl;

@@ -35,14 +35,14 @@ print_err() {
 }
 
 debug_test() {
-    $CXX $CXXFLAGS -g -fno-limit-debug-info -DNAMESPACE=ft -o ../debug.out $3 track/memory_tracker.cpp track/leak_checker.cpp
+    $CXX $CXXFLAGS -g -fno-limit-debug-info -DNAMESPACE=ft -DSFINAE=ft -o ../debug.out $3 track/memory_tracker.cpp track/leak_checker.cpp
 }
 
 do_test() {
     LOG_FT="$LOGS/$1/$2"__ft.log
     LOG_STD="$LOGS/$1/$2"__std.log
 
-    if $CXX $CXXFLAGS -DNAMESPACE=ft $3 track/memory_tracker.cpp track/leak_checker.cpp; then
+    if $CXX $CXXFLAGS -DNAMESPACE=ft -DSFINAE=ft $3 track/memory_tracker.cpp track/leak_checker.cpp; then
         if ! ./a.out > $LOG_FT; then
             test_fail "$1 $2"
             return
@@ -53,7 +53,7 @@ do_test() {
         return
     fi
 
-    if ! $CXX $CXXFLAGS -DNAMESPACE=std $3 track/memory_tracker.cpp track/leak_checker.cpp; then
+    if ! $CXX $CXXFLAGS -DNAMESPACE=std -DSFINAE=fake_std $3 track/memory_tracker.cpp track/leak_checker.cpp; then
         print_err "warning: std test failed to compile"
     fi
     ./a.out > $LOG_STD
