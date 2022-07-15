@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ANSI Colors
 RED="\033[31;1m"
@@ -6,11 +6,7 @@ GREEN="\033[32;1m"
 YELLOW="\033[33;1m"
 RST="\033[0m"
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    ECHO_FLAG=""
-else
-    ECHO_FLAG="-e"
-fi
+ECHO_FLAG="-e"
 
 CXX="clang++"
 CXXFLAGS="-Wall -Werror -Wextra -O3 -std=c++98 -I$FT_CONTAINERS -I."

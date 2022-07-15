@@ -1,15 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 # ANSI Colors
 RED="\033[31;1m"
 GREEN="\033[32;1m"
 RST="\033[0m"
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    ECHO_FLAG=""
-else
-    ECHO_FLAG="-e"
-fi
+ECHO_FLAG="-e"
 
 LOGS="logs"
 DIFFS="diffs"

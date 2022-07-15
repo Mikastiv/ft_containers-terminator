@@ -9,37 +9,37 @@ The tester expects every header files at the root of the folder assigned to FT_C
 Every header files are expected to follow STL file names (vector -> vector.hpp, map -> map.hpp, type_traits -> type_traits.hpp, ...)
 
 Run every tests: <br/>
-```sh run_tests.sh```
+```bash run_tests.sh```
 
 Run one or more container tests: <br/>
-```sh run_tests.sh <CONTAINER_1> ... <CONTAINER_N>```
+```bash run_tests.sh <CONTAINER_1> ... <CONTAINER_N>```
 <br/>Example: <br/>
-```sh run_tests.sh vector stack ...```
+```bash run_tests.sh vector stack ...```
 
 Run individual tests: <br/>
-```sh run_test_files.sh <CONTAINER> <TEST_1> ... <TEST_N>```
+```bash run_test_files.sh <CONTAINER> <TEST_1> ... <TEST_N>```
 <br/>Example: <br/>
-```sh run_test_files.sh vector erase clear ...```
+```bash run_test_files.sh vector erase clear ...```
 
 Run every benchmark: <br/>
-```sh run_benchmarks.sh```
+```bash run_benchmarks.sh```
 
 Run one or more container benchmarks: <br/>
-```sh run_benchmarks.sh <CONTAINER_1> ... <CONTAINER_N>```
+```bash run_benchmarks.sh <CONTAINER_1> ... <CONTAINER_N>```
 <br/>Example: <br/>
-```sh run_benchmarks.sh vector map ...```
+```bash run_benchmarks.sh vector map ...```
 
 Run individual benchmarks: <br/>
-```sh run_benchmark_files.sh <CONTAINER> <BENCHMARK_1> ... <BENCHMARK_N>```
+```bash run_benchmark_files.sh <CONTAINER> <BENCHMARK_1> ... <BENCHMARK_N>```
 <br/>Example: <br/>
-```sh run_benchmark_files.sh vector erase insert ...```
+```bash run_benchmark_files.sh vector erase insert ...```
 
 ## Debug helper
 
 You can create a executable (debug.out) for debugging a particular test with: <br/>
-```sh debug_test.sh <CONTAINER> <TEST>```
+```bash debug_test.sh <CONTAINER> <TEST>```
 <br/>Example: <br/>
-```sh debug_test.sh vector erase```
+```bash debug_test.sh vector erase```
 
 ## Summary
 
