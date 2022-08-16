@@ -67,7 +67,20 @@ do_test() {
     fi
 }
 
+check_dir() {
+    if [[ ! -d "tests/$1" ]]; then
+        print_err "test directory '$1' does not exist"
+        return 1
+    fi
+
+    return 0
+}
+
 test_container() {
+    if ! check_dir $1; then
+        return
+    fi
+
     TESTS=$(find "$TEST_DIR/$1" -type f -name '*.cpp' | sort)
 
     if [[ ${#TESTS} == 0 ]] ; then
@@ -87,6 +100,10 @@ test_container() {
 }
 
 test_files() {
+    if ! check_dir $1; then
+        return
+    fi
+
     TESTS=${@:2}
 
     mkdir -p $LOGS/$1 $DIFFS/$1
@@ -94,6 +111,11 @@ test_files() {
     for test in $TESTS; do
         TEST_NAME=$test
         TEST_FILE="tests/$1/$TEST_NAME.cpp"
+
+        if [[ ! -f $TEST_FILE ]]; then
+            print_err "test '$1 $TEST_NAME' does not exist"
+            continue
+        fi
 
         do_test $1 $TEST_NAME $TEST_FILE
     done
@@ -105,7 +127,7 @@ run_container_tests() {
     rm -rf $LOGS $DIFFS
     mkdir -p $LOGS $DIFFS
 
-    CONTAINERS="vector map stack set"
+    CONTAINERS="vector map stack set extra"
 
     if [ $# -ne 0 ]; then
         CONTAINERS=$@;
@@ -141,7 +163,8 @@ single_binary() {
     STACK_FILES=$(find "$TEST_DIR/stack" -type f -name '*.cpp' | sort)
     MAP_FILES=$(find "$TEST_DIR/map" -type f -name '*.cpp' | sort)
     SET_FILES=$(find "$TEST_DIR/set" -type f -name '*.cpp' | sort)
+    EXTRA_FILES=$(find "$TEST_DIR/extra" -type f -name '*.cpp' | sort)
 
-    $CXX $CXXFLAGS -DNAMESPACE=ft -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o ft.out
-    $CXX $CXXFLAGS -DNAMESPACE=std -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o std.out
+    $CXX $CXXFLAGS -DNAMESPACE=ft -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES $EXTRA_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o ft.out
+    $CXX $CXXFLAGS -DNAMESPACE=std -DSINGLE_BINARY $VEC_FILES $STACK_FILES $MAP_FILES $SET_FILES $EXTRA_FILES track/memory_tracker.cpp track/leak_checker.cpp main.cpp -o std.out
 }
