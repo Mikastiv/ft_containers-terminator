@@ -13,6 +13,11 @@
 #include "extra_prelude.hpp"
 #include <string>
 
+struct non_integral_struct {
+    int x;
+    long y;
+};
+
 void extra_test_is_integral()
 {
     std::cout << std::boolalpha;
@@ -109,6 +114,27 @@ void extra_test_is_integral()
     PRINT_IS_INTEGRAL(const std::string);
     PRINT_IS_INTEGRAL(volatile std::string);
     PRINT_IS_INTEGRAL(const volatile std::string);
+
+    PRINT_IS_INTEGRAL(non_integral_struct);
+    PRINT_IS_INTEGRAL(const non_integral_struct);
+    PRINT_IS_INTEGRAL(volatile non_integral_struct);
+    PRINT_IS_INTEGRAL(const volatile non_integral_struct);
+
+    PRINT_IS_INTEGRAL(float);
+    PRINT_IS_INTEGRAL(const float);
+    PRINT_IS_INTEGRAL(volatile float);
+    PRINT_IS_INTEGRAL(const volatile float);
+
+    PRINT_IS_INTEGRAL(double);
+    PRINT_IS_INTEGRAL(const double);
+    PRINT_IS_INTEGRAL(volatile double);
+    PRINT_IS_INTEGRAL(const volatile double);
+    PRINT_IS_INTEGRAL(long double);
+    PRINT_IS_INTEGRAL(const long double);
+    PRINT_IS_INTEGRAL(volatile long double);
+    PRINT_IS_INTEGRAL(const volatile long double);
+
+    PRINT_IS_INTEGRAL(void);
 }
 
 MAIN(extra_test_is_integral)

@@ -24,14 +24,31 @@ struct enable_if<true, T> {
     typedef T type;
 };
 
-struct true_type {
-    static const bool value = true;
-    typedef true_type type;
+template <typename T, T v>
+struct integral_constant {
+    static const bool value = v;
+    typedef T value_type;
+    typedef integral_constant type;
+
+    operator value_type() const
+    {
+        return value;
+    }
+
+    value_type operator()() const
+    {
+        return value;
+    }
 };
 
-struct false_type {
-    static const bool value = false;
-    typedef false_type type;
+template <bool V>
+struct bool_constant : public integral_constant<bool, V> {
+};
+
+struct true_type : public bool_constant<true> {
+};
+
+struct false_type : public bool_constant<false> {
 };
 
 template <typename T>
@@ -115,4 +132,4 @@ template <typename T>
 struct is_same<T, T> : public true_type {
 };
 
-} // namespace ft
+} // namespace fake_std
