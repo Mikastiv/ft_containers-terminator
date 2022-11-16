@@ -5,7 +5,7 @@ RED="\033[31;1m"
 GREEN="\033[32;1m"
 RST="\033[0m"
 
-ECHO_FLAG="-e"
+ECHO_FLAG=""
 
 LOGS="logs"
 DIFFS="diffs"
