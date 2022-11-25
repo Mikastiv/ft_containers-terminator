@@ -2,6 +2,10 @@
 
 A tester for the project ft_containers at 42
 
+## Beware
+
+<strong>Every functions in the std::uninitialized family will show KOs in the tester </strong> because they don't use the allocator passed as a template argument to the container. It will show <strong>'Called destroy on uninitialized memory'</strong>.
+
 ## Usage
 
 Set the location of your containers folder in config.sh (variable FT_CONTAINERS) <br/>
