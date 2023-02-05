@@ -12,42 +12,43 @@ Set the location of your containers folder in config.sh (variable FT_CONTAINERS)
 The tester expects every header files at the root of the folder assigned to FT_CONTAINERS <br/>
 Every header files are expected to follow STL file names (vector -> vector.hpp, map -> map.hpp, type_traits -> type_traits.hpp, ...)
 
-Run every tests: <br/>
+<strong>Run every tests:</strong> <br/>
 `./test_containers.sh`
 
-Run one or more container tests: <br/>
+<strong>Run one or more container tests:</strong> <br/>
 `./test_containers.sh <CONTAINER_1> ... <CONTAINER_N>`
-<br/>Example: <br/>
-`./test_containers.sh vector stack ...`
 
-Run individual tests: <br/>
+<strong>Run individual tests:</strong> <br/>
 `./test_files.sh <CONTAINER> <TEST_1> ... <TEST_N>`
-<br/>Example: <br/>
-`./test_files.sh vector erase clear ...`
 
-Run every benchmark: <br/>
+<strong>Run every benchmark:</strong> <br/>
 `./benchmark_containers.sh`
 
-Run one or more container benchmarks: <br/>
+<strong>Run one or more container benchmarks:</strong> <br/>
 `./benchmark_containers.sh <CONTAINER_1> ... <CONTAINER_N>`
-<br/>Example: <br/>
-`./benchmark_containers.sh vector map ...`
 
-Run individual benchmarks: <br/>
+<strong>Run individual benchmarks:</strong> <br/>
 `./benchmark_files.sh <CONTAINER> <BENCHMARK_1> ... <BENCHMARK_N>`
-<br/>Example: <br/>
+
+Examples: <br/>
+`./test_containers.sh vector stack ...` <br/>
+`./test_files.sh vector erase clear ...` <br/>
+`./benchmark_containers.sh vector map ...` <br/>
 `./benchmark_files.sh vector erase insert ...`
 
 ## Debug helper
 
-You can create a executable (debug.out) for debugging a particular test with: <br/>
+You can create an executable (debug.out) for debugging a particular test with: <br/>
 `./debug_test.sh <CONTAINER> <TEST>`
-<br/>Example: <br/>
+
+Example: <br/>
 `./debug_test.sh vector erase`
 
-## Summary
+## Things to know about the tester
 
-This tester tracks allocations/dealloctions as well as construction/destruction calls.
+This tester doesn't check for things that shouldn't compile, it only uses the containers in ways that must work. Anyone willing to add this feature is welcome to do so.
+
+It also tracks allocations/dealloctions as well as construction/destruction calls. So, for leak detection/object tracking to work, every allocations, deallocations, contructions and destructions have to be done with the allocator passed as a template argument. This applies to every containers. You should thus verify that all the calls to an allocator are using the template argument allocator and not std::allocator.
 
 Leaks are tracked and bad use of `Allocator::construct/Allocator::destroy` (Allocator is the template parameter for the container's allocator). Construct calls on initialized memory is a bug because the destructor of T will NOT be called on the old value nor will the operator=. Also, destroy calls on uninitialized memory is also a bug because its calling a destructor on garbage values.
 
@@ -76,10 +77,6 @@ struct object
 ```
 
 A vector of the struct object `(ft::vector<object>)` would leak memory everytime the destructor isn't called. Thus when the tester reports N number of alive objects, consider it to be a bug. This also happens when `Allocator::construct` is called on already initialized memory.
-
-## NOTE
-
-For leak detection/object tracking to work, every allocations, deallocations, contructions and destructions have to be done with the allocator passed as a template argument. This applies to every containers.
 
 ## Improvements/Bug fixes
 
